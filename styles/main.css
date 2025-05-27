@@ -2,3 +2,22 @@
     --frend-list-font-colot: #8e9297;
     --frend-list-font-size: 1rem;
 }
+body {
+    overflow: auto;
+}
+/* 프로필 이미지 */
+.profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+}
+
+.profile__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/seokgeun.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 50%;
+}
