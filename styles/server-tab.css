@@ -1,16 +1,16 @@
 body {
     background-color: var(--color-black);
-    padding: 50px;
+    /* padding: 50px; */
 }
 
 /* 서버 탭 라디오 버튼 컴포넌트 스타일링 */
-.server__button {
+.server__radio {
     width: 3rem;
     aspect-ratio: 1;
 
     .server__img {
         background-color: var(--color-grey-600);
-        background-image: url(/assets/discord-symbol-white.svg);
+        background-image: url(../assets/discord-symbol-white.svg);
         background-position: 50% 50%;
         background-size: 30px;
         appearance: none;
@@ -40,7 +40,8 @@ body {
             width: max-content;
             font-size: 1rem;
             line-height: 1;
-            top: 0.375rem;
+            top: 50%;
+            transform: translate(0, -50%);
             left: 3.75rem;
             border: #2e2e33 solid 1px;
             color: var(--color-white-100);
@@ -62,6 +63,48 @@ body {
             position: absolute;
             right: 3.5rem;
             top: 0;
+        }
+    }
+}
+
+/* 서버 탭 앵커 버튼 컴포넌트 스타일링 */
+.server__button {
+    width: 3rem;
+    aspect-ratio: 1;
+
+    a {
+        border-radius: 0.75rem;
+        background: var(--color-grey-600);
+        display: block;
+        height: 100%;
+        padding: 0.75rem;
+        justify-content: center;
+
+        svg {
+            width: 100%;
+            fill: var(--color-white);
+        }
+    }
+
+    a:hover {
+        background: var(--color-primary);
+        position: relative;
+
+        &::after {
+            content: "호버 메시지";
+            padding: 0.625rem;
+            position: absolute;
+            background: var(--color-grey-700);
+            width: max-content;
+            font-size: 1rem;
+            line-height: 1;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 3.75rem;
+            border: #2e2e33 solid 1px;
+            color: var(--color-white-100);
+            font-weight: 700;
+            border-radius: 6px;
         }
     }
 }
