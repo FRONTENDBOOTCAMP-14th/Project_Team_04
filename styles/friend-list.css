@@ -1,0 +1,172 @@
+:root {
+    --friend-list-background-color: #1a1a1e;
+    --friend-list-font-color: #fbfbfb;
+    --friend-list-item-hover-color: #242428;
+    --friend-list-search-background-color: #121214;
+    --friend-list-search-border-color: #2c2c30;
+    --friend-list-font-size: 1rem;
+    --friend-list-status-font-size: 0.875rem;
+    --friend-list-img-size: 2rem;
+    --friend-list-img-box-size: 2.1875rem;
+    --friend-list-btn-box-size: 2.25rem;
+}
+
+/* 친구목록 컨테이너 */
+
+.friend-list-contanier {
+    background-color: var(--friend-list-background-color);
+    padding-left: 12px;
+    padding-right: 8px;
+    padding-top: 12px;
+    height: 100%;
+}
+
+/* 친구목록 검색 */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button {
+    display: none; /* X 버튼 및 검색 결과 버튼 숨기기 */
+}
+.friend-list-search {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background-color: var(--friend-list-search-background-color);
+    border: 1px solid var(--friend-list-search-border-color);
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+.friend-list-search__input {
+    height: 20px;
+    background: none;
+    border: none;
+    color: var(--friend-list-font-color);
+    font-size: var(--friend-list-font-size);
+    width: 100%;
+    outline: none;
+}
+
+.friend_list-icon {
+    height: 20px;
+    width: 20px;
+    color: var(--color-grey-300);
+}
+
+/* 친구목록 넘버링 */
+.friend-list-numbering {
+    padding: 16px 8px 16px 12px;
+    height: 3.125rem;
+    position: relative;
+}
+.friend-list-numbering--text {
+    color: var(--friend-list-font-color);
+    font-size: var(--friend-list-status-font-size);
+    font-weight: normal;
+}
+
+/* 친구목록 리스트 */
+.friend-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-list__item {
+    display: flex;
+    height: 3.75rem;
+    align-items: center;
+    padding-right: 12px;
+    padding-left: 12px;
+    border-radius: 10px;
+    transition: padding 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.friend-list__item--hover:hover {
+    background-color: var(--friend-list-item-hover-color);
+}
+
+.friend-list__item:last-child {
+    border-bottom: none;
+}
+
+.friend-list__item:not(:last-child)::after,
+.friend-list-numbering::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    height: 1px;
+    width: calc(100% - 20px);
+    background: #42454a;
+    border-radius: 0; /* 둥글지 않음 */
+}
+
+.friend-list__item .profile {
+    margin-right: 0.75rem;
+    width: var(--friend-list-img-box-size);
+    height: var(--friend-list-img-box-size);
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.friend-list__item .profile__img {
+    width: var(--friend-list-img-size);
+    height: var(--friend-list-img-size);
+}
+
+.profile__name {
+    color: var(--friend-list-font-color);
+    font-size: var(--friend-list-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.profile__status {
+    color: var(--friend-list-font-color);
+    font-size: var(--friend-list-status-font-size);
+}
+
+.profile__img--status {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--friend-list-background-color);
+    border-radius: 50%;
+}
+
+.profile__img--status.online {
+    background-color: var(--color-green);
+}
+.profile__img--status.idle {
+    background-color: var(--color-yellow);
+}
+.profile__img--status.dnd {
+    background-color: var(--color-red);
+}
+.profile__img--status.offline {
+    background-color: var(--color-grey-300);
+}
+
+.profile__dmBtn,
+.profile__etcBtn {
+    color: var(--color-grey-300);
+    width: var(--friend-list-btn-box-size);
+    height: var(--friend-list-btn-box-size);
+    display: grid;
+    place-items: center;
+    background-color: var(--friend-list-background-color);
+    border-radius: 50%;
+}
+
+.profile__dmBtn {
+    margin-left: auto; /* 이게 핵심: 좌측 요소 밀어냄 */
+}
+
+.profile__etcBtn {
+    margin-left: 0.625rem;
+}
+
+/* 수동이미지삽입 */

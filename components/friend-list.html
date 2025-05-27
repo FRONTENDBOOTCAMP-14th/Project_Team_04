@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/friend-list.css" />
+    </head>
+    <body>
+        <!-- 친구탭 페이지 -->
+        <section class="friend-list-contanier">
+            <section class="friend-list-search">
+                <input
+                    class="friend-list-search__input"
+                    type="search"
+                    placeholder="검색하기"
+                    name=""
+                    id="" />
+                <svg
+                    class="friend_list-icon"
+                    aria-label="지우기"
+                    aria-hidden="false"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                        fill="currentColor"
+                        d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                        class=""></path>
+                </svg>
+            </section>
+            <section class="friend-list-numbering">
+                <h2 class="friend-list-numbering--text">온라인 — 4명</h2>
+            </section>
+            <!-- 친구 목록 -->
+            <div class="friend-list">
+                <!-- 친구 아이템 -->
+                <div class="friend-list__item friend-list__item--hover">
+                    <div class="profile">
+                        <span class="profile__img"></span>
+                        <span class="profile__img--status offline"></span>
+                    </div>
+                    <div class="profile__info">
+                        <p class="profile__name">김미성</p>
+                        <p class="profile__status">개발중...</p>
+                    </div>
+                    <a class="profile__dmBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
+                                class=""></path>
+                        </svg>
+                    </a>
+                    <a class="profile__etcBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="friend-list__item friend-list__item--hover">
+                    <div class="profile">
+                        <span class="profile__img"></span>
+                        <span class="profile__img--status offline"></span>
+                    </div>
+                    <div class="profile__info">
+                        <p class="profile__name">남도현</p>
+                        <p class="profile__status">개발중...</p>
+                    </div>
+                    <a class="profile__dmBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
+                                class=""></path>
+                        </svg>
+                    </a>
+                    <a class="profile__etcBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="friend-list__item friend-list__item--hover">
+                    <div class="profile">
+                        <span class="profile__img"></span>
+                        <span class="profile__img--status offline"></span>
+                    </div>
+                    <div class="profile__info">
+                        <p class="profile__name">정지은</p>
+                        <p class="profile__status">개발중...</p>
+                    </div>
+                    <a class="profile__dmBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
+                                class=""></path>
+                        </svg>
+                    </a>
+                    <a class="profile__etcBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="friend-list__item friend-list__item--hover">
+                    <div class="profile">
+                        <span class="profile__img"></span>
+                        <span class="profile__img--status offline"></span>
+                    </div>
+                    <div class="profile__info">
+                        <p class="profile__name">조석근</p>
+                        <p class="profile__status">개발중...</p>
+                    </div>
+                    <a class="profile__dmBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
+                                class=""></path>
+                        </svg>
+                    </a>
+                    <a class="profile__etcBtn" href="">
+                        <svg
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
