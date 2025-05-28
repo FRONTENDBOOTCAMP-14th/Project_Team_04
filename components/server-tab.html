@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>서버 탭 컴포넌트</title>
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/server-tab.css" />
+    </head>
+    <body>
+        <h1 hidden>서버 탭 컴포넌트</h1>
+        <!-- ========================
+        BLOCK: 서버 탭 컴포넌트
+        ========================= -->
+        <ul class="server">
+            <li class="server__radio">
+                <input checked class="server__img" type="radio" name="server" id="serverDM" data-tooltip="다이렉트 메시지" /><label
+                    class="sr-only"
+                    for="serverDM"
+                    >다이렉트 메시지</label
+                >
+            </li>
+            <li class="server__radio">
+                <input class="server__img" type="radio" name="server" id="serverLikeLion" data-tooltip="FRONTEND BOOTCAMP 14기" /><label
+                    class="sr-only"
+                    for="serverLikeLion"
+                    >FRONTEND BOOTCAMP 14기</label
+                >
+            </li>
+            <li class="server__button">
+                <button class="server__link button" type="button" aria-label="서버 추가하기" data-tooltip="서버 추가하기">
+                    <svg class="server__icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                        <path
+                            d="M10.5,0.5c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S16,0.5,10.5,0.5z M17,11.3h-5.7V17H9.7v-5.7H4V9.7h5.7V4h1.6v5.7H17V11.3z"
+                        />
+                    </svg>
+                </button>
+            </li>
+            <li class="server__button">
+                <a class="server__link" href="#" aria-label="찾기" data-tooltip="찾기">
+                    <svg class="server__icon" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                        <path
+                            d="M10.9158 9.71167C10.3058 9.71225 9.81625 10.2027 9.81684 10.8127C9.81743 11.4227 10.3079 11.9123 10.9179 11.9117C11.5279 11.9111 12.0174 11.4206 12.0168 10.8106C12.0163 10.2006 11.5258 9.71108 10.9158 9.71167ZM10.9072 0.811672C5.38722 0.81698 0.911535 5.30129 0.916844 10.8213C0.922153 16.3413 5.40646 20.817 10.9265 20.8117C16.4465 20.8064 20.9221 16.322 20.9168 10.802C20.9115 5.28205 16.4272 0.806363 10.9072 0.811672ZM13.1089 12.9996L4.92261 16.8174L8.72473 8.62377L16.9111 4.8059L13.1089 12.9996Z"
+                            fill="#EFEFF0"
+                        />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </body>
+</html>
