@@ -1,14 +1,15 @@
-body {
-}
-
 /* 서버 탭 라디오 버튼 컴포넌트 스타일링 */
 .server__radio {
     width: 3rem;
     height: 3rem;
 
     .server__img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
         background-color: var(--color-grey-600);
         background-image: url(../assets/discord-symbol-white.svg);
+        background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: 30px;
         appearance: none;
@@ -61,6 +62,7 @@ body {
             color: var(--color-white-100);
             font-weight: 700;
             border-radius: 6px;
+            z-index: 9;
         }
     }
 
@@ -99,6 +101,7 @@ body {
 
         .server__icon {
             width: 100%;
+            height: 100%;
             fill: var(--color-white);
         }
     }
@@ -123,6 +126,7 @@ body {
             color: var(--color-white-100);
             font-weight: 700;
             border-radius: 6px;
+            z-index: 9;
         }
     }
 }
@@ -133,7 +137,14 @@ body {
     flex-flow: column nowrap;
     gap: 0.75rem;
     width: 4.5rem;
-    padding-inline: 0.75rem;
+    min-height: min-content;
+    padding: 0.75rem;
+    list-style: none;
+
+    .button {
+        border: none;
+        cursor: pointer;
+    }
 
     .server__radio:first-child {
         padding-bottom: 0.75rem;
@@ -142,7 +153,7 @@ body {
     }
 
     .server__radio:nth-child(2) {
-        .profile__img {
+        .server__img {
             background: url(../assets/server-profile.webp) no-repeat;
             background-size: cover;
         }
