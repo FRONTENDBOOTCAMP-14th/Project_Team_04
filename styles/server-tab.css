@@ -1,0 +1,174 @@
+body {
+    background-color: var(--color-black);
+    /* padding: 50px; */
+}
+
+/* 서버 탭 라디오 버튼 컴포넌트 스타일링 */
+.server__radio {
+    width: 3rem;
+    height: 3rem;
+
+    .server__img {
+        background-color: var(--color-grey-600);
+        background-image: url(../assets/discord-symbol-white.svg);
+        background-position: 50% 50%;
+        background-size: 30px;
+        appearance: none;
+        border-radius: 0.75rem;
+        transition: background-color 200ms ease;
+    }
+
+    .server__img::before {
+        content: "";
+        height: 0;
+        transform: scaleY(0) translateX(-0.25rem);
+        transform-origin: left center;
+        transition: transform 200ms ease;
+    }
+
+    .server__img:hover:not(:checked)::before {
+        content: "";
+        transform: scaleY(1) translateX(0);
+    }
+
+    .server__img:hover,
+    .server__img:focus-visible {
+        background-color: var(--color-primary);
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            width: 0.25rem;
+            height: 1.5rem;
+            border-radius: 0 4px 4px 0;
+            background: var(--color-white);
+            position: absolute;
+            right: 3.5rem;
+            top: calc(1.5rem / 2);
+        }
+
+        &::after {
+            content: attr(data-tooltip);
+            padding: 0.625rem;
+            position: absolute;
+            background: var(--color-grey-700);
+            width: max-content;
+            font-size: 1rem;
+            line-height: 1;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 3.75rem;
+            border: #2e2e33 solid 1px;
+            color: var(--color-white-100);
+            font-weight: 700;
+            border-radius: 6px;
+        }
+    }
+
+    .server__img:checked {
+        background-color: var(--color-primary);
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 0.25rem;
+            height: 3rem;
+            border-radius: 0 4px 4px 0;
+            background: var(--color-white);
+            position: absolute;
+            right: 3.5rem;
+            top: 0;
+            transform: scaleY(1) translateX(0);
+            transition: none;
+        }
+    }
+}
+
+/* 서버 탭 앵커 버튼 컴포넌트 스타일링 */
+.server__button {
+    width: 3rem;
+    height: 3rem;
+
+    .server__link {
+        border-radius: 0.75rem;
+        background: var(--color-grey-600);
+        display: block;
+        height: 100%;
+        padding: 0.75rem;
+        justify-content: center;
+        transition: background-color 200ms ease;
+
+        .server__icon {
+            width: 100%;
+            fill: var(--color-white);
+        }
+    }
+
+    .server__link:hover,
+    .server__link:focus-visible {
+        background: var(--color-primary);
+        position: relative;
+
+        &::after {
+            content: attr(data-tooltip);
+            padding: 0.625rem;
+            position: absolute;
+            background: var(--color-grey-700);
+            width: max-content;
+            font-size: 1rem;
+            line-height: 1;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 3.75rem;
+            border: #2e2e33 solid 1px;
+            color: var(--color-white-100);
+            font-weight: 700;
+            border-radius: 6px;
+        }
+    }
+}
+
+/* 서버 탭 컴포넌트 스타일링 */
+.server {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.75rem;
+    width: 4.5rem;
+    padding-inline: 0.75rem;
+
+    .server__radio:first-child {
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--color-grey-700);
+        box-sizing: content-box;
+    }
+
+    .server__radio:nth-child(2) {
+        .profile__img {
+            background: url(../assets/server-profile.webp) no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+/* 키프레임 규칙 */
+@keyframes pop {
+    0% {
+        transform: translate(0, -50%) scale(1);
+    }
+    50% {
+        transform: translate(0, -50%) scale(1.02);
+    }
+    100% {
+        transform: translate(0, -50%) scale(1);
+    }
+}
+
+/* 호버 메시지 애니메이션 적용 */
+.server__img:hover::after,
+.server__link:hover::after,
+.server__img:focus-visible::after,
+.server__link:focus-visible::after {
+    animation: pop 200ms ease-out;
+    transform-origin: left center;
+}
