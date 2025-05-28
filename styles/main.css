@@ -17,8 +17,7 @@
     --color-grey-650: #27272a;
     --color-grey-700: #222225;
 
-    --frend-list-font-color: #8e9297;
-    --frend-list-font-size: 1rem;
+    --main-panel-background-color: #1a1a1e;
 }
 body {
     overflow: auto;
