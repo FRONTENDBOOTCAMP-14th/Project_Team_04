@@ -1,69 +1,94 @@
 .header {
     background-color: var(--color-grey-550);
     display: flex;
-    padding-top: 12.88px;
+    padding-top: 0.805rem;
     padding-bottom: 14.0192px;
-    padding-left: 17px;
+    padding-inline: 1.0625rem;
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
 
     .tab-list {
         margin-left: 0.9375rem;
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 10.9808px;
+        gap: 0.6863rem;
         color: var(--color-grey-50);
-        font-size: 16.7808px;
+        font-size: 1.0488rem;
         font-weight: medium;
     }
+
+    .button-list {
+        display: flex;
+        align-items: center;
+        gap: 1.1875rem;
+        list-style: none;
+        button {
+            all: unset;
+            cursor: pointer;
+        }
+    }
+
     .header__logo {
         display: flex;
     }
 
     .list-button {
         background-color: var(--color-primary);
-        padding-block: 3px;
-        padding-inline: 7px;
+
+        padding-inline: 0.4375rem;
         border-radius: 0.1875rem;
         white-space: nowrap;
         button {
             all: unset;
+            cursor: pointer;
+            padding-top: 0.3125rem;
+            padding-bottom: 0.114rem;
         }
     }
 
     label {
         padding-inline: 0.4375rem;
-        padding-block: 0.1875rem;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.1875rem;
         display: flex;
         align-self: center;
+        cursor: pointer;
+        white-space: nowrap;
     }
 
     input[type="radio"]:checked + label {
         background-color: var(--color-grey-650);
         border-radius: 0.1875rem;
     }
-}
 
-.logo {
-    display: flex;
-    gap: 8.9808px;
-    align-items: center;
-    margin-right: 0.9375rem;
-    img {
-        color: var(--color-grey-400);
-        width: 1.3125rem;
-        height: 1.0625rem;
-    }
-    p {
-        padding-top: 0.25rem;
-        color: var(--color-grey-50);
-        font-size: 16px;
-        font-weight: bold;
+    .logo {
+        display: flex;
+        gap: 0.5613rem;
+        align-items: center;
+        margin-right: 0.9375rem;
+        img {
+            color: var(--color-grey-400);
+            width: 1.3125rem;
+            height: 1.0625rem;
+        }
+        p {
+            padding-top: 0.25rem;
+            color: var(--color-grey-50);
+            font-size: 1rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
     }
 }
 
 .block-divider {
     display: block;
-    width: 1px;
-    height: auto;
+    width: 0.0625rem;
+    height: 1.75rem;
     background-color: var(--color-grey-700);
 }
