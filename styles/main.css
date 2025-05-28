@@ -20,8 +20,39 @@
     --main-panel-background-color: #1a1a1e;
 }
 body {
-    overflow: auto;
+    background-color: var(--main-panel-background-color);
+    height: 100vh;
 }
+.application {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4.375rem 15rem 1fr;
+    grid-template-rows: 3.125rem 1fr 3.3125rem;
+
+    grid-template-areas:
+        "side-server-bar side-friend-list main-panel-header"
+        "side-server-bar side-friend-list main-panel"
+        "bottom-user-profile bottom-user-profile main-panel";
+}
+
+.side-server-bar {
+    grid-area: side-server-bar;
+}
+.side-friend-list {
+    grid-area: side-friend-list;
+}
+.main-panel-header {
+    grid-area: main-panel-header;
+}
+.bottom-user-profile {
+    grid-area: bottom-user-profile;
+}
+.main-panel {
+    grid-area: main-panel;
+}
+
 /* 프로필 이미지 */
 .profile {
     width: 2.5rem;
