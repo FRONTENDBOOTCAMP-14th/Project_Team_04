@@ -98,21 +98,7 @@
     height: 1px;
     width: calc(100% - 20px);
     background: #42454a;
-    border-radius: 0; /* 둥글지 않음 */
-}
-
-.friend-list__item .profile {
-    margin-right: 0.75rem;
-    width: var(--friend-list-img-box-size);
-    height: var(--friend-list-img-box-size);
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-
-.friend-list__item .profile__img {
-    width: var(--friend-list-img-size);
-    height: var(--friend-list-img-size);
+    border-radius: 0;
 }
 
 .profile__name {
@@ -135,6 +121,10 @@
     height: 15px;
     border: 3px solid var(--main-panel-background-color);
     border-radius: 50%;
+}
+
+.profile__info {
+    margin-left: 0.75rem;
 }
 
 .profile__img--status.online {

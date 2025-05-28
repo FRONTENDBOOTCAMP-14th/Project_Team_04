@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../styles/base.css" />
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/friend-list.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
     </head>
     <body>
         <!-- 친구탭 페이지 -->
@@ -35,15 +36,17 @@
                 </svg>
             </section>
             <section class="friend-list-numbering">
-                <h2 class="friend-list-numbering--text">온라인 — 4명</h2>
+                <h2 class="friend-list-numbering--text">온라인 — 3명</h2>
             </section>
             <!-- 친구 목록 -->
             <div class="friend-list">
                 <!-- 친구 아이템 -->
                 <div class="friend-list__item friend-list__item--hover">
-                    <div class="profile">
-                        <span class="profile__img"></span>
-                        <span class="profile__img--status offline"></span>
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--large">
+                        <img src="../assets/misung.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status online"></div>
                     </div>
                     <div class="profile__info">
                         <p class="profile__name">김미성</p>
@@ -82,10 +85,13 @@
                         </svg>
                     </a>
                 </div>
+
                 <div class="friend-list__item friend-list__item--hover">
-                    <div class="profile">
-                        <span class="profile__img"></span>
-                        <span class="profile__img--status offline"></span>
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--large">
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status dnd"></div>
                     </div>
                     <div class="profile__info">
                         <p class="profile__name">남도현</p>
@@ -124,10 +130,13 @@
                         </svg>
                     </a>
                 </div>
+
                 <div class="friend-list__item friend-list__item--hover">
-                    <div class="profile">
-                        <span class="profile__img"></span>
-                        <span class="profile__img--status offline"></span>
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--large">
+                        <img src="../assets/jieun.png" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status offline"></div>
                     </div>
                     <div class="profile__info">
                         <p class="profile__name">정지은</p>
@@ -166,10 +175,13 @@
                         </svg>
                     </a>
                 </div>
+
                 <div class="friend-list__item friend-list__item--hover">
-                    <div class="profile">
-                        <span class="profile__img"></span>
-                        <span class="profile__img--status offline"></span>
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--large">
+                        <img src="../assets/seokgeun.jpg" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status idle"></div>
                     </div>
                     <div class="profile__info">
                         <p class="profile__name">조석근</p>
