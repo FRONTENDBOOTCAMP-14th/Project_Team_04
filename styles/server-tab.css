@@ -141,6 +141,11 @@
     padding: 0.75rem;
     list-style: none;
 
+    .button {
+        border: none;
+        cursor: pointer;
+    }
+
     .server__radio:first-child {
         padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--color-grey-700);
