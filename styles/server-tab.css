@@ -15,6 +15,20 @@ body {
         background-size: 30px;
         appearance: none;
         border-radius: 0.75rem;
+        transition: background-color 200ms ease;
+    }
+
+    input::before {
+        content: "";
+        height: 0;
+        transform: scaleY(0) translateX(-0.25rem);
+        transform-origin: left center;
+        transition: transform 200ms ease;
+    }
+
+    input:hover:not(:checked)::before {
+        content: "";
+        transform: scaleY(1) translateX(0);
     }
 
     input:hover {
@@ -64,6 +78,8 @@ body {
             position: absolute;
             right: 3.5rem;
             top: 0;
+            transform: scaleY(1) translateX(0);
+            transition: none;
         }
     }
 }
@@ -80,6 +96,7 @@ body {
         height: 100%;
         padding: 0.75rem;
         justify-content: center;
+        transition: background-color 200ms ease;
 
         svg {
             width: 100%;
@@ -144,4 +161,24 @@ body {
     div:nth-of-type(4) a:hover::after {
         content: "찾기";
     }
+}
+
+/* 키프레임 규칙 */
+@keyframes pop {
+    0% {
+        transform: translate(0, -50%) scale(1);
+    }
+    50% {
+        transform: translate(0, -50%) scale(1.02);
+    }
+    100% {
+        transform: translate(0, -50%) scale(1);
+    }
+}
+
+/* 호버 메시지 애니메이션 적용 */
+input:hover::after,
+a:hover::after {
+    animation: pop 200ms ease-out;
+    transform-origin: left center;
 }
