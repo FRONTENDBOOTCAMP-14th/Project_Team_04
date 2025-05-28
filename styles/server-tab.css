@@ -65,6 +65,7 @@ body {
             color: var(--color-white-100);
             font-weight: 700;
             border-radius: 6px;
+            z-index: 9;
         }
     }
 
@@ -127,6 +128,7 @@ body {
             color: var(--color-white-100);
             font-weight: 700;
             border-radius: 6px;
+            z-index: 9;
         }
     }
 }
