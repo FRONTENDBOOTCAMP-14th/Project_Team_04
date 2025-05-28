@@ -1,0 +1,88 @@
+body {
+    overflow: auto;
+}
+
+/* 하단 프로필 전체 컨테이너 */
+.user-profile {
+    display: flex;
+    width: 100%;
+    height: 3.75rem;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--color-grey-500);
+    font-size: 0.875rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+/* 버튼들 기본 설정 */
+.btn--def {
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: transparent;
+
+    &:hover {
+        background: #333338;
+    }
+}
+
+/* 프로필쪽 버튼 */
+.user-profile__btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/* 프로필 이미지 */
+.profile__img {
+    position: relative;
+    background-image: url("../assets/dohyeon.webp");
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--color-green);
+        outline: 2px solid var(--color-grey-500);
+    }
+}
+
+/* 프로필쪽 텍스트 */
+.profile-text {
+    margin-left: 8px;
+    text-align: start;
+
+    .profile-text__nickname {
+        color: var(--color-white-100);
+    }
+
+    .profile-text__status {
+        color: var(--color-grey-200);
+    }
+}
+
+/* 마이크, 헤드셋, 옵션 버튼 */
+.control {
+    display: flex;
+    gap: 0.5rem;
+
+    .control__mic {
+        width: 32px;
+        height: 32px;
+    }
+
+    .control__headset {
+        width: 32px;
+        height: 32px;
+    }
+
+    .control__option {
+        width: 32px;
+        height: 32px;
+    }
+}
