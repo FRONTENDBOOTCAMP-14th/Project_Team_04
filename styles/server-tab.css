@@ -18,7 +18,7 @@ body {
         transition: background-color 200ms ease;
     }
 
-    input::before {
+    .server__img::before {
         content: "";
         height: 0;
         transform: scaleY(0) translateX(-0.25rem);
@@ -26,12 +26,13 @@ body {
         transition: transform 200ms ease;
     }
 
-    input:hover:not(:checked)::before {
+    .server__img:hover:not(:checked)::before {
         content: "";
         transform: scaleY(1) translateX(0);
     }
 
-    input:hover {
+    .server__img:hover,
+    .server__img:focus-visible {
         background-color: var(--color-primary);
         position: relative;
         cursor: pointer;
@@ -48,7 +49,7 @@ body {
         }
 
         &::after {
-            content: "호버 메시지";
+            content: attr(data-tooltip);
             padding: 0.625rem;
             position: absolute;
             background: var(--color-grey-700);
@@ -65,7 +66,7 @@ body {
         }
     }
 
-    input:checked {
+    .server__img:checked {
         background-color: var(--color-primary);
         position: relative;
 
@@ -104,12 +105,13 @@ body {
         }
     }
 
-    a:hover {
+    a:hover,
+    a:focus-visible {
         background: var(--color-primary);
         position: relative;
 
         &::after {
-            content: "호버 메시지";
+            content: attr(data-tooltip);
             padding: 0.625rem;
             position: absolute;
             background: var(--color-grey-700);
@@ -135,31 +137,17 @@ body {
     width: 4.5rem;
     padding-inline: 0.75rem;
 
-    hr {
-        border: 1px solid var(--color-grey-700);
+    li:first-of-type {
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--color-grey-700);
+        box-sizing: content-box;
     }
 
-    div:nth-of-type(1) input:hover::after {
-        content: "다이렉트 메시지";
-    }
-
-    div:nth-of-type(2) {
+    li:nth-of-type(2) {
         .profile__img {
             background: url(../assets/server-profile.webp) no-repeat;
             background-size: cover;
         }
-
-        input:hover::after {
-            content: "FRONTEND BOOTCAMP 14기";
-        }
-    }
-
-    div:nth-of-type(3) a:hover::after {
-        content: "서버 추가하기";
-    }
-
-    div:nth-of-type(4) a:hover::after {
-        content: "찾기";
     }
 }
 
@@ -177,8 +165,10 @@ body {
 }
 
 /* 호버 메시지 애니메이션 적용 */
-input:hover::after,
-a:hover::after {
+.server__img:hover::after,
+a:hover::after,
+.server__img:focus-visible::after,
+a:focus-visible::after {
     animation: pop 200ms ease-out;
     transform-origin: left center;
 }
