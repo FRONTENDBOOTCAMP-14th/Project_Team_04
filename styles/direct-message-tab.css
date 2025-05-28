@@ -1,0 +1,191 @@
+body {
+    overflow: auto;
+}
+
+/* DM 탭 전체 컨테이너 */
+.direct-message-tab {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+    border-top-left-radius: 8px;
+    background: var(--color-black);
+}
+
+/* DM 탭 검색버튼 */
+.conversation {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+    border-bottom: 1px solid #2c2e32;
+
+    .conversation__btn {
+        width: 100%;
+        height: 32px;
+        padding: 2px 16px;
+        border: 0;
+        border-radius: 8px;
+        background: #97979f1f;
+        color: var(--color-white);
+        font-size: 14px;
+
+        &:hover {
+            background: #97979f40;
+            cursor: pointer;
+        }
+    }
+}
+
+/* DM 탭 친구 버튼 */
+.friends-btn-wrapper {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding-inline: 8px;
+    margin-top: 8px;
+
+    .friends-btn {
+        width: 100%;
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: #97979f1f;
+        color: var(--color-white);
+        text-decoration: none;
+
+        &:hover {
+            background: #97979f15;
+        }
+
+        .friends-btn__contents {
+            display: flex;
+            align-items: center;
+            padding-block: 1px;
+            gap: 10px;
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+/* 구분선 */
+.just-line {
+    height: 1px;
+    margin: 12px 8px;
+    border: 0;
+    background: #2c2e32;
+}
+
+/* 다이렉트 메시지 + */
+.direct-message-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 24px;
+    padding: 4px 20px;
+    p {
+        width: 100%;
+        color: #82838b;
+        font-size: 14px;
+
+        &:hover {
+            color: var(--color-white);
+            cursor: default;
+        }
+    }
+    button {
+        border: 0;
+        background: transparent;
+    }
+
+    img {
+        width: 16px;
+        cursor: pointer;
+    }
+}
+
+/* DM 리스트 */
+.direct-message-list {
+    list-style-type: none;
+    padding-inline: 10px;
+    margin-top: 10px;
+    color: #82838b;
+    cursor: pointer;
+
+    .direct-message-list__0:has(input[type="radio"]:checked) {
+        background: #97979f20;
+        color: var(--color-white);
+    }
+
+    .direct-message-list__0 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 48px;
+        padding-inline: 10px;
+        margin-bottom: 2px;
+        border-radius: 8px;
+
+        &:hover {
+            background: #97979f15;
+            color: var(--color-white);
+
+            button {
+                display: inline;
+                position: absolute;
+                right: 10px;
+            }
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            display: none;
+            margin-left: auto;
+            border: none;
+            background: transparent;
+
+            img {
+                width: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    border-radius: 50%;
+                    background: #97979f40;
+                }
+            }
+        }
+    }
+}
+
+/* 프로필 설정 */
+
+.profile {
+    width: 32px;
+    height: 32px;
+}
+
+.profile__img {
+    position: relative;
+    background-image: url("../assets/dohyeon.webp");
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--color-green);
+        outline: 2px solid var(--color-grey-500);
+    }
+}
