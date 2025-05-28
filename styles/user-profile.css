@@ -34,6 +34,19 @@ body {
 /* 프로필 이미지 */
 .profile__img {
     background-image: url("../assets/dohyeon.webp");
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        aspect-ratio: 1;
+        background: var(--color-green);
+        border-radius: 50%;
+        outline: 2px solid var(--color-grey-500);
+    }
 }
 
 .profile-text {
