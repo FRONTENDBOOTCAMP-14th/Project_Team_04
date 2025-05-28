@@ -90,7 +90,7 @@ body {
     width: 3rem;
     height: 3rem;
 
-    a {
+    .server__link {
         border-radius: 0.75rem;
         background: var(--color-grey-600);
         display: block;
@@ -99,14 +99,14 @@ body {
         justify-content: center;
         transition: background-color 200ms ease;
 
-        svg {
+        .server__icon {
             width: 100%;
             fill: var(--color-white);
         }
     }
 
-    a:hover,
-    a:focus-visible {
+    .server__link:hover,
+    .server__link:focus-visible {
         background: var(--color-primary);
         position: relative;
 
@@ -137,13 +137,13 @@ body {
     width: 4.5rem;
     padding-inline: 0.75rem;
 
-    li:first-of-type {
+    .server__radio:first-child {
         padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--color-grey-700);
         box-sizing: content-box;
     }
 
-    li:nth-of-type(2) {
+    .server__radio:nth-child(2) {
         .profile__img {
             background: url(../assets/server-profile.webp) no-repeat;
             background-size: cover;
@@ -166,9 +166,9 @@ body {
 
 /* 호버 메시지 애니메이션 적용 */
 .server__img:hover::after,
-a:hover::after,
+.server__link:hover::after,
 .server__img:focus-visible::after,
-a:focus-visible::after {
+.server__link:focus-visible::after {
     animation: pop 200ms ease-out;
     transform-origin: left center;
 }
