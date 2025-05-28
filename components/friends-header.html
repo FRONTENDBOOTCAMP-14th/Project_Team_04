@@ -13,19 +13,78 @@
             <div class="header__logo">
                 <div class="logo">
                     <img src="../assets/friends.svg" alt="" />
-                    <p>Friends</p>
+                    <p>친구</p>
                 </div>
             </div>
             <span class="block-divider"></span>
             <nav>
-            <ul class="tab-list">
-                <li><input type="radio" name="tab" id="online" class="sr-only" checked><label for="online">Online</label></input></li>
-                <li><input type="radio" name="tab" id="all" class="sr-only"><label for="all">All</label></input></li>
-                <li><input type="radio" name="tab" id="pending" class="sr-only"><label for="pending">Pending</label></input></li>
-                <li><input type="radio" name="tab" id="suggestions" class="sr-only"><label for="suggestions">Suggestions</label></input></li>
-                <li><input type="radio" name="tab" id="blocked" class="sr-only"><label for="blocked">Blocked</label></input></li>
-                <li class="list-button"><button>Add Friend</button></li>
-            </ul>
+                <ul class="tab-list">
+                    <li>
+                        <input
+                            type="radio"
+                            name="tab"
+                            id="online"
+                            class="sr-only"
+                            checked
+                        /><label for="online">온라인</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="tab"
+                            id="all"
+                            class="sr-only"
+                        /><label for="all">모두</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="tab"
+                            id="pending"
+                            class="sr-only"
+                        /><label for="pending">대기 중</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="tab"
+                            id="suggestions"
+                            class="sr-only"
+                        /><label for="suggestions">추천</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="tab"
+                            id="blocked"
+                            class="sr-only"
+                        /><label for="blocked">차단 목록</label>
+                    </li>
+                    <li class="list-button"><button>친구 추가하기</button></li>
+                </ul>
+                <ul class="button-list">
+                    <li>
+                        <button class="msg-button" aria-label="메세지 추가">
+                            <img src="../assets/add_message.svg" alt="" />
+                        </button>
+                    </li>
+                    <li><span class="block-divider"></span></li>
+                    <li>
+                        <button class="inbox-button" aria-label="메세지함 보기">
+                            <img src="../assets/inbox.svg" alt="" />
+                        </button>
+                    </li>
+                    <li>
+                        <a
+                            href="https://support.discord.com/hc/ko"
+                            target="_blank"
+                            rel="noopenner noreferrer"
+                            aria-label="도움 페이지로 이동"
+                            class="help-link"
+                            ><img src="../assets/question_circle.svg" alt=""
+                        /></a>
+                    </li>
+                </ul>
             </nav>
         </header>
     </body>
