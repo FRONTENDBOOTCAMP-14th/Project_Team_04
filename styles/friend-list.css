@@ -1,5 +1,4 @@
 :root {
-    --friend-list-background-color: #1a1a1e;
     --friend-list-font-color: #fbfbfb;
     --friend-list-item-hover-color: #242428;
     --friend-list-search-background-color: #121214;
@@ -14,7 +13,7 @@
 /* 친구목록 컨테이너 */
 
 .friend-list-contanier {
-    background-color: var(--friend-list-background-color);
+    background-color: var(--main-panel-background-color);
     padding-left: 12px;
     padding-right: 8px;
     padding-top: 12px;
@@ -133,7 +132,7 @@
     bottom: 0;
     width: 15px;
     height: 15px;
-    border: 3px solid var(--friend-list-background-color);
+    border: 3px solid var(--main-panel-background-color);
     border-radius: 50%;
 }
 
@@ -157,7 +156,7 @@
     height: var(--friend-list-btn-box-size);
     display: grid;
     place-items: center;
-    background-color: var(--friend-list-background-color);
+    background-color: var(--main-panel-background-color);
     border-radius: 50%;
 }
 
