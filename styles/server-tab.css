@@ -140,6 +140,7 @@ body {
     gap: 0.75rem;
     width: 4.5rem;
     padding-inline: 0.75rem;
+    list-style: none;
 
     .server__radio:first-child {
         padding-bottom: 0.75rem;
