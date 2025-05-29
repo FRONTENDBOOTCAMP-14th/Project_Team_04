@@ -20,6 +20,7 @@ body {
     border: 0;
     border-radius: 0.5rem;
     background-color: transparent;
+    cursor: pointer;
 
     &:hover {
         background: #333338;
@@ -31,24 +32,8 @@ body {
     display: flex;
     width: 100%;
     align-items: center;
-}
-
-/* 프로필 이미지 */
-.profile__img {
-    position: relative;
-    background-image: url("../assets/dohyeon.webp");
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 10px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--color-green);
-        outline: 2px solid var(--color-grey-500);
-    }
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 /* 프로필쪽 텍스트 */
