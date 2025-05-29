@@ -101,6 +101,18 @@ body {
         &:hover {
             position: relative;
 
+            &::before {
+                content: "";
+                position: absolute;
+                top: -14px;
+                left: 4px;
+                width: 0.5rem;
+                height: 0.5rem;
+                border: 1px solid #2e2e33;
+                background: var(--color-grey-700);
+                transform: rotate(45deg);
+            }
+
             &::after {
                 content: attr(data-tooltip);
                 padding: 0.625rem;
@@ -115,6 +127,15 @@ body {
                 color: var(--color-white-100);
                 font-weight: 700;
                 border-radius: 6px;
+                clip-path: polygon(
+                    100% 0,
+                    100% 100%,
+                    calc(50% + 0.25rem) 100%,
+                    50% calc(100% - 0.125rem),
+                    calc(50% - 0.25rem) 100%,
+                    0 100%,
+                    0 0
+                );
             }
         }
     }
