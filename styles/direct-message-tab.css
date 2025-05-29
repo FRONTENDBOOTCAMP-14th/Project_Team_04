@@ -63,6 +63,7 @@ body {
 
             span {
                 font-weight: 500;
+                line-height: 1.5;
             }
         }
     }
@@ -96,6 +97,26 @@ body {
     button {
         border: 0;
         background: transparent;
+
+        &:hover {
+            position: relative;
+
+            &::after {
+                content: attr(data-tooltip);
+                padding: 0.625rem;
+                position: absolute;
+                background: var(--color-grey-700);
+                width: max-content;
+                font-size: 14px;
+                line-height: 1;
+                top: -44px;
+                left: -28px;
+                border: 1px solid #2e2e33;
+                color: var(--color-white-100);
+                font-weight: 700;
+                border-radius: 6px;
+            }
+        }
     }
 
     img {
@@ -163,29 +184,5 @@ body {
                 }
             }
         }
-    }
-}
-
-/* 프로필 설정 */
-
-.profile {
-    width: 32px;
-    height: 32px;
-}
-
-.profile__img {
-    position: relative;
-    background-image: url("../assets/dohyeon.webp");
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 10px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--color-green);
-        outline: 2px solid var(--color-grey-500);
     }
 }
