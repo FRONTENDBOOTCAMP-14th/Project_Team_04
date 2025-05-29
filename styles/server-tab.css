@@ -1,5 +1,6 @@
 /* 서버 탭 라디오 버튼 컴포넌트 스타일링 */
 .server__radio {
+    position: relative;
     width: 3rem;
     height: 3rem;
 
@@ -12,9 +13,27 @@
         background-image: url(../assets/discord-symbol-white.svg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-size: 30px;
+        background-size: 1.875rem;
         appearance: none;
         transition: background-color 200ms ease;
+    }
+
+    .server__radio--hover {
+        position: absolute;
+        top: 50%;
+        left: 3.625rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #2e2e33;
+        background: var(--color-grey-700);
+        opacity: 0;
+        transform: translate(0, -50%) rotate(45deg);
+        z-index: 8;
+    }
+
+    .server__img:hover ~ .server__radio--hover,
+    .server__img:focus-visible ~ .server__radio--hover {
+        opacity: 1;
     }
 
     .server__img::before {
@@ -42,7 +61,7 @@
             right: 3.5rem;
             width: 0.25rem;
             height: 1.5rem;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 0.25rem 0.25rem 0;
             background: var(--color-white);
             content: "";
         }
@@ -53,8 +72,8 @@
             left: 3.75rem;
             width: max-content;
             padding: 0.625rem;
-            border: #2e2e33 solid 1px;
-            border-radius: 6px;
+            border: 1px solid #2e2e33;
+            border-radius: 0.375rem;
             background: var(--color-grey-700);
             color: var(--color-white-100);
             font-size: 1rem;
@@ -62,6 +81,16 @@
             line-height: 1;
             content: attr(data-tooltip);
             transform: translate(0, -50%);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 100%,
+                0 calc(50% + 0.125rem),
+                0.125rem calc(50% + 0.25rem),
+                0.125rem calc(50% - 0.25rem),
+                0 calc(50% - 0.125rem)
+            );
             z-index: 9;
         }
     }
@@ -76,7 +105,7 @@
             right: 3.5rem;
             width: 0.25rem;
             height: 3rem;
-            border-radius: 0 4px 4px 0;
+            border-radius: 0 0.25rem 0.25rem 0;
             background: var(--color-white);
             content: "";
             transform: scaleY(1) translateX(0);
@@ -117,14 +146,27 @@
         position: relative;
         background: var(--color-primary);
 
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 3.625rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            border: 1px solid #2e2e33;
+            background: var(--color-grey-700);
+            content: "";
+            transform: translate(0, -50%) rotate(45deg);
+            z-index: 9;
+        }
+
         &::after {
             position: absolute;
             top: 50%;
             left: 3.75rem;
             width: max-content;
             padding: 0.625rem;
-            border: #2e2e33 solid 1px;
-            border-radius: 6px;
+            border: 1px solid #2e2e33;
+            border-radius: 0.375rem;
             background: var(--color-grey-700);
             color: var(--color-white-100);
             font-size: 1rem;
@@ -132,6 +174,16 @@
             line-height: 1;
             content: attr(data-tooltip);
             transform: translate(0, -50%);
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 100%,
+                0 calc(50% + 0.125rem),
+                0.125rem calc(50% + 0.25rem),
+                0.125rem calc(50% - 0.25rem),
+                0 calc(50% - 0.125rem)
+            );
             z-index: 9;
         }
     }
@@ -157,6 +209,10 @@
         padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--color-grey-700);
         box-sizing: content-box;
+
+        span:last-of-type {
+            top: calc(50% - (0.75rem / 2));
+        }
     }
 
     .server__radio:nth-child(2) {
