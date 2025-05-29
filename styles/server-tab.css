@@ -7,19 +7,19 @@
         display: inline-block;
         width: 100%;
         height: 100%;
+        border-radius: 0.75rem;
         background-color: var(--color-grey-600);
         background-image: url(../assets/discord-symbol-white.svg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: 30px;
         appearance: none;
-        border-radius: 0.75rem;
         transition: background-color 200ms ease;
     }
 
     .server__img::before {
-        content: "";
         height: 0;
+        content: "";
         transform: scaleY(0) translateX(-0.25rem);
         transform-origin: left center;
         transition: transform 200ms ease;
@@ -32,53 +32,53 @@
 
     .server__img:hover,
     .server__img:focus-visible {
-        background-color: var(--color-primary);
         position: relative;
+        background-color: var(--color-primary);
         cursor: pointer;
 
         &::before {
-            content: "";
+            position: absolute;
+            top: calc(1.5rem / 2);
+            right: 3.5rem;
             width: 0.25rem;
             height: 1.5rem;
             border-radius: 0 4px 4px 0;
             background: var(--color-white);
-            position: absolute;
-            right: 3.5rem;
-            top: calc(1.5rem / 2);
+            content: "";
         }
 
         &::after {
-            content: attr(data-tooltip);
-            padding: 0.625rem;
             position: absolute;
-            background: var(--color-grey-700);
-            width: max-content;
-            font-size: 1rem;
-            line-height: 1;
             top: 50%;
-            transform: translate(0, -50%);
             left: 3.75rem;
+            width: max-content;
+            padding: 0.625rem;
             border: #2e2e33 solid 1px;
-            color: var(--color-white-100);
-            font-weight: 700;
             border-radius: 6px;
+            background: var(--color-grey-700);
+            color: var(--color-white-100);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            content: attr(data-tooltip);
+            transform: translate(0, -50%);
             z-index: 9;
         }
     }
 
     .server__img:checked {
-        background-color: var(--color-primary);
         position: relative;
+        background-color: var(--color-primary);
 
         &::before {
-            content: "";
+            position: absolute;
+            top: 0;
+            right: 3.5rem;
             width: 0.25rem;
             height: 3rem;
             border-radius: 0 4px 4px 0;
             background: var(--color-white);
-            position: absolute;
-            right: 3.5rem;
-            top: 0;
+            content: "";
             transform: scaleY(1) translateX(0);
             transition: none;
         }
@@ -91,11 +91,11 @@
     height: 3rem;
 
     .server__link {
-        border-radius: 0.75rem;
-        background: var(--color-grey-600);
         display: block;
         height: 100%;
         padding: 0.75rem;
+        border-radius: 0.75rem;
+        background: var(--color-grey-600);
         justify-content: center;
         transition: background-color 200ms ease;
 
@@ -108,24 +108,24 @@
 
     .server__link:hover,
     .server__link:focus-visible {
-        background: var(--color-primary);
         position: relative;
+        background: var(--color-primary);
 
         &::after {
-            content: attr(data-tooltip);
-            padding: 0.625rem;
             position: absolute;
-            background: var(--color-grey-700);
-            width: max-content;
-            font-size: 1rem;
-            line-height: 1;
             top: 50%;
-            transform: translate(0, -50%);
             left: 3.75rem;
+            width: max-content;
+            padding: 0.625rem;
             border: #2e2e33 solid 1px;
-            color: var(--color-white-100);
-            font-weight: 700;
             border-radius: 6px;
+            background: var(--color-grey-700);
+            color: var(--color-white-100);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            content: attr(data-tooltip);
+            transform: translate(0, -50%);
             z-index: 9;
         }
     }
@@ -134,12 +134,12 @@
 /* 서버 탭 컴포넌트 스타일링 */
 .server {
     display: flex;
-    flex-flow: column nowrap;
-    gap: 0.75rem;
+    list-style: none;
     width: 4.5rem;
     min-height: min-content;
     padding: 0.75rem;
-    list-style: none;
+    flex-flow: column nowrap;
+    gap: 0.75rem;
 
     .button {
         border: none;
