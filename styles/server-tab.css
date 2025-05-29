@@ -18,6 +18,7 @@
         transition: background-color 200ms ease;
     }
 
+    /* 라디오 버튼 호버 메시지 창의 말풍선 화살표 모양 */
     .server__radio--hover {
         position: absolute;
         top: 50%;
@@ -31,11 +32,13 @@
         z-index: 8;
     }
 
+    /* 라디오 버튼 호버했을 때 말풍선 화살표 모양 나타나게 지정 */
     .server__img:hover ~ .server__radio--hover,
     .server__img:focus-visible ~ .server__radio--hover {
         opacity: 1;
     }
 
+    /* 라디오 버튼 호버했을 때 왼쪽에 하얀 바 나타날 때 커지는 효과 */
     .server__img::before {
         height: 0;
         content: "";
@@ -49,12 +52,14 @@
         transform: scaleY(1) translateX(0);
     }
 
+    /* 라디오 버튼 호버했을 때 효과 */
     .server__img:hover,
     .server__img:focus-visible {
         position: relative;
         background-color: var(--color-primary);
         cursor: pointer;
 
+        /* 왼쪽 하얀 색 바 */
         &::before {
             position: absolute;
             top: calc(1.5rem / 2);
@@ -66,6 +71,7 @@
             content: "";
         }
 
+        /* 호버 메시지 창 */
         &::after {
             position: absolute;
             top: 50%;
@@ -81,6 +87,7 @@
             line-height: 1;
             content: attr(data-tooltip);
             transform: translate(0, -50%);
+            /* 말풍선 모양 만들기 위해 보더 부분 자르기 */
             clip-path: polygon(
                 0 0,
                 100% 0,
@@ -95,10 +102,12 @@
         }
     }
 
+    /* 라디오 버튼 체크됐을 때 효과 */
     .server__img:checked {
         position: relative;
         background-color: var(--color-primary);
 
+        /* 왼쪽 하얀 색 바 키우기 */
         &::before {
             position: absolute;
             top: 0;
@@ -128,6 +137,7 @@
         justify-content: center;
         transition: background-color 200ms ease;
 
+        /* 키보드로 접근했을 때 포커스 링 모양 재정의 */
         &:focus-visible {
             outline: 1px solid var(--color-white);
             outline-offset: 2px;
@@ -141,11 +151,13 @@
         }
     }
 
+    /* 앵커 버튼 호버 효과 */
     .server__link:hover,
     .server__link:focus-visible {
         position: relative;
         background: var(--color-primary);
 
+        /* 호버 메시지 창의 말풍선 화살표 */
         &::before {
             position: absolute;
             top: 50%;
@@ -159,6 +171,7 @@
             z-index: 9;
         }
 
+        /* 호버 메시지 창 */
         &::after {
             position: absolute;
             top: 50%;
@@ -174,6 +187,7 @@
             line-height: 1;
             content: attr(data-tooltip);
             transform: translate(0, -50%);
+            /* 말풍선 모양 만들기 위해 보더 부분 자르기 */
             clip-path: polygon(
                 0 0,
                 100% 0,
@@ -200,21 +214,25 @@
     flex-flow: column nowrap;
     gap: 0.75rem;
 
+    /* 버튼 커서 모양 변경 */
     .button {
         border: none;
         cursor: pointer;
     }
 
+    /* 첫 번째 버튼 밑에 구분선 추가 */
     .server__radio:first-child {
         padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--color-grey-700);
         box-sizing: content-box;
 
+        /* 호버 메시지 말풍선 화살표 부분 위치 조정 */
         span:last-of-type {
             top: calc(50% - (0.75rem / 2));
         }
     }
 
+    /* 두 번째 버튼 서버 프로필 이미지 변경 */
     .server__radio:nth-child(2) {
         .server__img {
             background: url(../assets/server-profile.webp) no-repeat;
@@ -223,7 +241,7 @@
     }
 }
 
-/* 키프레임 규칙 */
+/* 호버 메시지 애니메이션 키프레임 규칙 */
 @keyframes pop {
     0% {
         transform: translate(0, -50%) scale(1);
