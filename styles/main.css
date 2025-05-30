@@ -29,7 +29,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 4.375rem 15rem 1fr;
-    grid-template-rows: 3.125rem 1fr 3.3125rem;
+    grid-template-rows: 3.125rem 1fr 3.75rem;
 
     grid-template-areas:
         "side-server-bar side-friend-list main-panel-header"
