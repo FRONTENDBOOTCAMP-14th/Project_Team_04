@@ -1,13 +1,13 @@
 /* 컴포넌트 여백 및 정렬 */
-.server-list__components {
-    padding: 48px;
+.channel__components {
+    padding: 3rem;
     display: flex;
     flex-flow: column nowrap;
-    gap: 48px;
+    gap: 3rem;
 }
 
 /* 서버 메뉴 드롭다운 버튼 컴포넌트 */
-.server-list__dropdown {
+.channel__dropdown {
     display: flex;
     align-items: center;
     gap: 0.625rem;
