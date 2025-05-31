@@ -64,7 +64,7 @@
         .channel__heading {
             font-size: 0.875rem;
             line-height: 1;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         &::after {
@@ -99,10 +99,6 @@
         summary::after {
             --size: 40%;
         }
-
-        .channel__heading {
-            font-weight: 600;
-        }
     }
 }
 
@@ -116,7 +112,7 @@
     .channel__list {
         display: flex;
         align-items: center;
-        position: relative;
+        /* position: relative; */
         border-radius: 0.5rem;
 
         .channel__radio {
@@ -130,21 +126,19 @@
             column-gap: 0.5rem;
             padding: 0.25rem 0.5rem;
             cursor: pointer;
+            min-width: 0;
 
             svg {
                 fill: var(--color-grey-200);
                 width: 1.25rem;
             }
-
-            .channel__title {
-                min-width: max-content;
-            }
         }
 
         .channel__list--hover {
             display: none;
-            position: absolute;
-            right: 0.5rem;
+            /* position: absolute;
+            right: 0.5rem; */
+            padding-right: 0.5rem;
             align-items: center;
             column-gap: 0.25rem;
             cursor: pointer;
@@ -205,4 +199,40 @@
             }
         }
     }
+}
+
+/* 채널 목록 탭 컴포넌트 스타일링 */
+.channel {
+    background: var(--color-black);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+
+    .channel__dropdown {
+        background: var(--color-black);
+        padding-right: 2rem;
+        z-index: 1;
+    }
+
+    .channel__container {
+        padding: 0 0.5rem;
+        overflow: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 0.5rem;
+    }
+
+    h2,
+    .channel__heading,
+    .channel__title {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* 바깥쪽 스크롤바 생김 방지 */
+body {
+    overflow: hidden;
 }
