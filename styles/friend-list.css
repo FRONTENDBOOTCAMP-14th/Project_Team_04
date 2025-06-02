@@ -36,6 +36,13 @@
     text-align: center;
     justify-content: space-between;
 }
+
+.friend-list-search.small {
+    padding: 5px 12px;
+    margin-bottom: 0px;
+    border-radius: 6px;
+}
+
 .friend-list-search__input {
     height: 20px;
     background: none;
