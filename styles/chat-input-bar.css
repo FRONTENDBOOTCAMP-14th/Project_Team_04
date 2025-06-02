@@ -51,6 +51,9 @@
                 border: none;
                 color: var(--color-grey-50);
             }
+            textarea::-webkit-scrollbar {
+                display: none;
+            }
 
             textarea:focus {
                 outline: none;
