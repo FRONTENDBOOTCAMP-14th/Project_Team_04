@@ -48,9 +48,16 @@ body {
             height: 100%;
             fill: var(--color-grey-200);
         }
+
+        &:focus-visible {
+            outline: 1px solid var(--color-white);
+            outline-offset: 2px;
+            border-radius: 0.25rem;
+        }
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
         border-bottom: 1px solid var(--color-grey-200);
         background: var(--main-panel-background-color);
     }
@@ -124,7 +131,15 @@ body {
         align-items: center;
 
         .channel__radio {
+            outline: none;
             appearance: none;
+
+            &:focus-visible ~ label,
+            &:checked:focus-visible ~ label {
+                outline: 1px solid var(--color-white);
+                outline-offset: 2px;
+                border-radius: 0.5rem;
+            }
         }
 
         label {
@@ -169,7 +184,14 @@ body {
 
             .channel__chat:hover,
             .channel__invitation:hover,
-            .channel__setting:hover {
+            .channel__setting:hover,
+            .channel__chat:focus-visible,
+            .channel__invitation:focus-visible,
+            .channel__setting:focus-visible {
+                outline: 1px solid var(--color-white);
+                outline-offset: 2px;
+                border-radius: 0.25rem;
+
                 svg {
                     fill: var(--color-white-100);
                 }
