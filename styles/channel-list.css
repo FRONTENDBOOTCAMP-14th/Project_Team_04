@@ -1,48 +1,64 @@
+/* 바깥쪽 스크롤바 생김 방지 */
+body {
+    overflow: hidden;
+}
+
 /* 컴포넌트 여백 및 정렬 */
 .channel__components {
-    padding: 3rem;
     display: flex;
+    padding: 3rem;
+    background: var(--color-black);
     flex-flow: column nowrap;
     gap: 3rem;
-    background: var(--color-black);
 }
 
 /* 서버 메뉴 드롭다운 버튼 컴포넌트 스타일링 */
 .channel__dropdown {
     display: flex;
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-grey-700);
+    border-top-left-radius: 1rem;
     align-items: center;
     gap: 0.625rem;
-    padding: 1rem;
-    position: relative;
 
     h2 {
-        font-size: 1rem;
         color: var(--color-white-100);
+        font-size: 1rem;
         line-height: 1;
         flex-grow: 1;
     }
 
     button {
+        display: flex;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: none;
-        border: none;
         padding: 1rem;
-        cursor: pointer;
-        display: flex;
+        border: none;
+        border-top-left-radius: 1rem;
+        background: none;
         align-items: center;
         justify-content: end;
+        cursor: pointer;
 
         svg {
             height: 100%;
             fill: var(--color-grey-200);
         }
+
+        &:focus-visible {
+            outline: 1px solid var(--color-white);
+            outline-offset: 2px;
+            border-radius: 0.25rem;
+        }
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
+        border-bottom: 1px solid var(--color-grey-200);
         background: var(--main-panel-background-color);
     }
 }
@@ -54,25 +70,28 @@
     color: var(--font-color);
 
     summary {
-        cursor: pointer;
-        padding: 0.5rem;
-        list-style: none;
         display: flex;
+        list-style: none;
+        padding: 0.5rem;
         align-items: center;
         gap: 0.375rem;
+        cursor: pointer;
 
         .channel__heading {
             font-size: 0.875rem;
-            line-height: 1;
             font-weight: 600;
+            line-height: 1;
         }
 
         &::after {
             --size: 30%;
 
-            content: "";
             width: 0.375rem;
             aspect-ratio: 5/4;
+            background: var(--font-color);
+            content: "";
+            transform: rotate(-90deg);
+            transition: transform 200ms ease;
             clip-path: polygon(
                 0 0,
                 0 var(--size),
@@ -81,9 +100,6 @@
                 100% 0,
                 50% calc(100% - var(--size))
             );
-            background: var(--font-color);
-            transform: rotate(-90deg);
-            transition: transform 200ms ease;
         }
 
         [open] &::after {
@@ -104,50 +120,60 @@
 
 /* 채널 목록 라디오 버튼 컴포넌트 스타일링 */
 .channel__group {
-    list-style: none;
     display: flex;
+    list-style: none;
     flex-flow: column nowrap;
     row-gap: 1px;
 
     .channel__list {
         display: flex;
-        align-items: center;
-        /* position: relative; */
         border-radius: 0.5rem;
+        align-items: center;
 
         .channel__radio {
+            outline: none;
             appearance: none;
+
+            &:focus-visible ~ label,
+            &:checked:focus-visible ~ label {
+                outline: 1px solid var(--color-white);
+                outline-offset: 2px;
+                border-radius: 0.5rem;
+            }
         }
 
         label {
             display: flex;
+            min-width: 0;
+            padding: 0.25rem 0.5rem;
             flex: 1;
             align-items: center;
             column-gap: 0.5rem;
-            padding: 0.25rem 0.5rem;
             cursor: pointer;
-            min-width: 0;
 
-            svg {
-                fill: var(--color-grey-200);
+            .channel__text,
+            .channel__voice {
                 width: 1.25rem;
+                height: 1.25rem;
+
+                svg {
+                    fill: var(--color-grey-200);
+                }
             }
         }
 
         .channel__list--hover {
             display: none;
-            /* position: absolute;
-            right: 0.5rem; */
             padding-right: 0.5rem;
             align-items: center;
             column-gap: 0.25rem;
             cursor: pointer;
 
             .channel__invitation {
-                background: none;
                 border: none;
-                cursor: pointer;
+                background: none;
                 line-height: 0.5;
+                cursor: pointer;
             }
 
             .channel__chat,
@@ -158,15 +184,22 @@
 
             .channel__chat:hover,
             .channel__invitation:hover,
-            .channel__setting:hover {
+            .channel__setting:hover,
+            .channel__chat:focus-visible,
+            .channel__invitation:focus-visible,
+            .channel__setting:focus-visible {
+                outline: 1px solid var(--color-white);
+                outline-offset: 2px;
+                border-radius: 0.25rem;
+
                 svg {
                     fill: var(--color-white-100);
                 }
             }
 
             svg {
-                fill: var(--color-grey-200);
                 height: 1rem;
+                fill: var(--color-grey-200);
             }
         }
 
@@ -203,23 +236,24 @@
 
 /* 채널 목록 탭 컴포넌트 스타일링 */
 .channel {
-    background: var(--color-black);
     display: flex;
-    flex-flow: column nowrap;
     height: 100%;
+    border-left: 1px solid var(--color-grey-700);
+    border-top: 1px solid var(--color-grey-700);
+    border-top-left-radius: 1rem;
+    background: var(--color-black);
+    flex-flow: column nowrap;
 
     .channel__dropdown {
-        background: var(--color-black);
         padding-right: 2rem;
-        z-index: 1;
     }
 
     .channel__container {
-        padding: 0 0.5rem;
-        overflow: auto;
         display: flex;
+        padding: 0 0.5rem;
         flex-flow: column nowrap;
         row-gap: 0.5rem;
+        overflow: auto;
     }
 
     h2,
@@ -232,7 +266,147 @@
     }
 }
 
-/* 바깥쪽 스크롤바 생김 방지 */
-body {
-    overflow: hidden;
+/* 툴팁 스타일링 */
+.channel__chat:hover,
+.channel__chat:focus-visible,
+.channel__invitation:hover,
+.channel__invitation:focus-visible,
+.channel__setting:hover,
+.channel__setting:focus-visible {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        bottom: 1.375rem;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #2e2e33;
+        background: var(--color-grey-700);
+        content: "";
+        transform: translate(-50%, 0) rotate(45deg);
+        z-index: 9;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        width: max-content;
+        padding: 0.625rem;
+        border: 1px solid #2e2e33;
+        border-radius: 0.375rem;
+        background: var(--color-grey-700);
+        color: var(--color-white-100);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+        content: attr(data-tooltip);
+        transform: translate(-50%, 0);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            calc(50% + 0.125rem) 100%,
+            calc(50% + 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.125rem) 100%,
+            0 100%
+        );
+        z-index: 9;
+    }
 }
+
+.channel__voice:hover,
+.channel__voice:focus-visible,
+.channel__text:hover,
+.channel__text:focus-visible {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #2e2e33;
+        background: var(--color-grey-700);
+        content: "";
+        transform: translate(-50%, 0) rotate(45deg);
+        z-index: 9;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 1.625rem;
+        left: 50%;
+        width: max-content;
+        padding: 0.625rem;
+        border: 1px solid #2e2e33;
+        border-radius: 0.375rem;
+        background: var(--color-grey-700);
+        color: var(--color-white-100);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+        content: attr(data-tooltip);
+        transform: translate(-50%, 0);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            calc(50% + 0.125rem) 100%,
+            calc(50% + 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.125rem) 100%,
+            0 100%
+        );
+        z-index: 9;
+    }
+}
+
+/* .channel__list label:hover,
+.channel__list label:focus-visible {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #2e2e33;
+        background: var(--color-grey-700);
+        content: "";
+        transform: translate(-50%, 0) rotate(45deg);
+        z-index: 9;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 1.375rem;
+        left: 50%;
+        width: max-content;
+        padding: 0.625rem;
+        border: 1px solid #2e2e33;
+        border-radius: 0.375rem;
+        background: var(--color-grey-700);
+        color: var(--color-white-100);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+        content: attr(data-tooltip);
+        transform: translate(-50%, 0);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            calc(50% + 0.125rem) 100%,
+            calc(50% + 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.25rem) calc(100% - 0.125rem),
+            calc(50% - 0.125rem) 100%,
+            0 100%
+        );
+        z-index: 9;
+    }
+} */
