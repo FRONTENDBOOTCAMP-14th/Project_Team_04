@@ -69,3 +69,25 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+
+.components-list {
+    color: var(--color-white);
+    font-size: large;
+    margin: 20px;
+
+    a {
+        color: #ddffff;
+    }
+
+    a:visited {
+        color: #ccccee;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+}

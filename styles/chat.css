@@ -1,0 +1,103 @@
+.chat-panel-container {
+    height: 100%;
+}
+
+.chat-header {
+    display: flex;
+    height: 3rem;
+    padding: 0.5rem;
+    padding-left: 1.3125rem;
+    border-bottom: 1px solid #2c2e32;
+    justify-content: space-between;
+}
+
+.chat-header__user-profile-side {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    color: var(--color-white);
+    .avatar__wrapper {
+        margin-left: 4px;
+        margin-right: 8px;
+    }
+}
+
+.chat-header__user-name {
+    padding-left: 2px;
+    margin-right: 8px;
+}
+
+.chat-header__dot {
+    height: 4px;
+    width: 4px;
+    color: #333338;
+    margin-left: 8px;
+}
+
+.chat-header__sec-name-text {
+    margin-left: 8px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+}
+
+.chat-header__sec-name {
+    margin-left: 8px;
+}
+
+.btn-side {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    gap: 8px;
+}
+
+.btn-side__btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center; /* 세로 중앙 */
+    justify-content: center; /* 가로 중앙 */
+}
+
+.btn-side__btn img {
+    filter: invert(47%) sepia(1%) saturate(2246%) hue-rotate(196deg)
+        brightness(110%) contrast(74%);
+}
+
+.btn-side div {
+    width: 32px;
+}
+.chat-header__hide-profile img {
+    filter: invert(99%) sepia(92%) saturate(0%) hue-rotate(99deg)
+        brightness(107%) contrast(97%);
+}
+
+/* 챗 박스 헤더 */
+.chat-box__topbox {
+    margin: 1rem;
+    color: var(--color-white);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2c2e32;
+}
+
+.chat-box__topbox--title {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+}
+
+.chat-box__topbox--subtitle {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.chat-box__topbox--title-description {
+    font-size: 1rem;
+}
+
+/* 챗 박스 메세지 부분 */
+
+.chat-box__message-list {
+    margin: 1.0625rem 1.25rem 0 1rem;
+    list-style: none;
+}

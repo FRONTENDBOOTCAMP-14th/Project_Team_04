@@ -6,13 +6,162 @@
         <link rel="stylesheet" href="../styles/base.css" />
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/chat.css" />
+        <link rel="stylesheet" href="../styles/friend-list.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
         <title>Document</title>
     </head>
     <body>
         <section class="chat-panel-container">
-            <section class="chat-header"></section>
-            <section class="chat-box"></section>
-            <section class="chat-input"></section>
+            <section class="chat-header">
+                <div class="chat-header__user-profile-side">
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--small">
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status offline"></div>
+                    </div>
+                    <span class="chat-header__user-name">사용자</span>
+                    <svg
+                        class="chat-header__dot"
+                        aria-hidden="true"
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 4 4">
+                        <circle
+                            cx="2"
+                            cy="2"
+                            r="2"
+                            fill="currentColor"></circle>
+                    </svg>
+
+                    <span class="chat-header__sec-name-text">다른 별명</span>
+                    <span class="chat-header__sec-name">게스트</span>
+                </div>
+                <div class="btn-side">
+                    <div class="btn-side__btn chat-header__call-btn">
+                        <img src="../assets/callimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__cam-btn">
+                        <img src="../assets/videochatimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__pin-btn">
+                        <img src="../assets/pinimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__add-friend">
+                        <img src="../assets/addfriend.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__hide-profile">
+                        <img src="../assets/hideprofileimg.svg" alt="" />
+                    </div>
+                    <section class="friend-list-search small">
+                        <input
+                            class="friend-list-search__input"
+                            type="search"
+                            placeholder="검색하기"
+                            name=""
+                            id="" />
+                        <svg
+                            class="friend_list-icon"
+                            aria-label="지우기"
+                            aria-hidden="false"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                                class=""></path>
+                        </svg>
+                    </section>
+                </div>
+            </section>
+            <!-- 채팅창 -->
+            <section class="chat-box">
+                <div class="chat-box__topbox">
+                    <div class="avatar__wrapper avatar__wrapper--extralarge">
+                        <!-- 큰 아바타 -->
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status offline"></div>
+                    </div>
+                    <h1 class="chat-box__topbox--title">게스트</h1>
+                    <h2 class="chat-box__topbox--subtitle">Guest</h2>
+                    <p class="chat-box__topbox--title-description">
+                        <b>게스트</b> 님과 나눈 다이렉트 메시지의 첫 부분이에요.
+                    </p>
+                </div>
+
+                <!-- 실제 입력 창 -->
+                <ol class="chat-box__message-list">
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+            <!-- 입력창 -->
+            <section class="chat-input-container">
+                <form action="" tabindex="0" tabindex="0">
+                    <button class="attach" type="button">
+                        <span class="sr-only">첨부파일 추가하기</span>
+                    </button>
+                    <div class="input__container">
+                        <label for="chat" class="sr-only">채팅입력</label
+                        ><textarea
+                            id="chat"
+                            placeholder="채팅을 입력해주세요."
+                            tabindex="0"></textarea>
+                    </div>
+                    <div class="button__container">
+                        <button type="button" class="gift" tabindex="0">
+                            <span class="sr-only">선물 보내기</span>
+                        </button>
+                        <button type="button" class="gif">
+                            <span class="sr-only">gif 사용하기</span>
+                        </button>
+                        <button type="button" class="sticker">
+                            <span class="sr-only">스티커 사용하기</span>
+                        </button>
+                        <button type="button" class="emoji">
+                            <span class="sr-only">이모지 사용하기</span>
+                        </button>
+                        <button type="button" class="game">
+                            <span class="sr-only">게임 추가하기</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
             <section class="chat-right-side"></section>
         </section>
     </body>
