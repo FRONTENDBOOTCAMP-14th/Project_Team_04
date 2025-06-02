@@ -162,23 +162,3 @@
 .server__link:focus-visible + .server__button--hover {
     transform: translateX(0);
 }
-
-/* 라디오 버튼 체크됐을 때 효과 */
-/* 왼쪽 하얀 색 바 키우기 */
-/* .server__img:checked {
-        position: relative;
-        background-color: var(--color-primary);
-
-        &::before {
-            position: absolute;
-            top: 0;
-            right: 3.5rem;
-            width: 0.25rem;
-            height: 3rem;
-            border-radius: 0 0.25rem 0.25rem 0;
-            background: var(--color-white);
-            content: "";
-            transform: scaleY(1) translateX(0);
-            transition: none;
-        }
-    } */
