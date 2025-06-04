@@ -25,52 +25,59 @@
                             name="tab"
                             id="online"
                             class="sr-only"
-                            checked
-                        /><label for="online">온라인</label>
+                            checked /><label for="online">온라인</label>
                     </li>
                     <li>
                         <input
                             type="radio"
                             name="tab"
                             id="all"
-                            class="sr-only"
-                        /><label for="all">모두</label>
+                            class="sr-only" /><label for="all">모두</label>
                     </li>
                     <li>
                         <input
                             type="radio"
                             name="tab"
                             id="pending"
-                            class="sr-only"
-                        /><label for="pending">대기 중</label>
+                            class="sr-only" /><label for="pending"
+                            >대기 중</label
+                        >
                     </li>
                     <li>
                         <input
                             type="radio"
                             name="tab"
                             id="suggestions"
-                            class="sr-only"
-                        /><label for="suggestions">추천</label>
+                            class="sr-only" /><label for="suggestions"
+                            >추천</label
+                        >
                     </li>
                     <li>
                         <input
                             type="radio"
                             name="tab"
                             id="blocked"
-                            class="sr-only"
-                        /><label for="blocked">차단 목록</label>
+                            class="sr-only" /><label for="blocked"
+                            >차단 목록</label
+                        >
                     </li>
                     <li class="list-button"><button>친구 추가하기</button></li>
                 </ul>
                 <ul class="button-list">
                     <li>
-                        <button class="msg-button" aria-label="메세지 추가">
+                        <button
+                            class="msg-button tooltip-header"
+                            data-tooltip="메세지 보내기"
+                            aria-label="메세지 추가">
                             <img src="../assets/add_message.svg" alt="" />
                         </button>
                     </li>
                     <li><span class="block-divider"></span></li>
                     <li>
-                        <button class="inbox-button" aria-label="메세지함 보기">
+                        <button
+                            class="inbox-button tooltip-header"
+                            data-tooltip="받은 편지함"
+                            aria-label="받은 편지함">
                             <img src="../assets/inbox.svg" alt="" />
                         </button>
                     </li>
@@ -80,7 +87,8 @@
                             target="_blank"
                             rel="noopenner noreferrer"
                             aria-label="도움 페이지로 이동"
-                            class="help-link"
+                            class="help-link tooltip-header"
+                            data-tooltip="도움말"
                             ><img src="../assets/question_circle.svg" alt=""
                         /></a>
                     </li>
