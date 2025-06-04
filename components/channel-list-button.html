@@ -32,10 +32,14 @@
                 <!-- 채널 목록 라디오 버튼 컴포넌트 -->
                 <ul class="channel__group">
                     <li class="channel__list">
-                        <a class="channel__button" href="#">
-                            <div class="channel__voice" data-tooltip="음성">
+                        <input
+                            class="channel__radio sr-only"
+                            type="radio"
+                            name="channel"
+                            id="channel1" />
+                        <label for="channel1">
+                            <div class="channel__text" data-tooltip="텍스트">
                                 <svg
-                                    data-tooltip="텍스트"
                                     aria-label="텍스트 채널"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -51,7 +55,7 @@
                                 class="channel__title"
                                 >채널 이름</span
                             >
-                        </a>
+                        </label>
                         <div class="channel__list--hover">
                             <button
                                 class="channel__invitation"
@@ -85,10 +89,13 @@
                         </div>
                     </li>
                     <li class="channel__list">
-                        <a class="channel__button" href="#">
+                        <input
+                            class="channel__radio sr-only"
+                            type="radio"
+                            name="channel"
+                            id="channel2" /><label for="channel2">
                             <div class="channel__voice" data-tooltip="음성">
                                 <svg
-                                    data-tooltip="음성"
                                     aria-label="음성 채널"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -104,7 +111,7 @@
                                 class="channel__title"
                                 >채널 이름</span
                             >
-                        </a>
+                        </label>
                         <div class="channel__list--hover">
                             <a
                                 class="channel__chat"

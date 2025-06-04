@@ -1,10 +1,130 @@
-/* 서버 탭 앵커 버튼 컴포넌트 스타일링 */
-.server__content {
-    margin: 0.75rem;
+/* 서버 탭 라디오 버튼 컴포넌트 스타일링 */
+.server__radio {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+
+    .server__img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.75rem;
+        background-color: var(--color-grey-600);
+        background-image: url(../assets/discord-symbol-white.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 1.875rem;
+        appearance: none;
+        transition: background-color 200ms ease;
+    }
+
+    /* 라디오 버튼 호버 메시지 창의 말풍선 화살표 모양 */
+    .server__radio--hover {
+        position: absolute;
+        top: 50%;
+        left: 3.625rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #2e2e33;
+        background: var(--color-grey-700);
+        opacity: 0;
+        transform: translate(0, -50%) rotate(45deg);
+        z-index: 8;
+    }
+
+    /* 라디오 버튼 호버했을 때 말풍선 화살표 모양 나타나게 지정 */
+    .server__img:hover ~ .server__radio--hover,
+    .server__img:focus-visible ~ .server__radio--hover {
+        opacity: 1;
+    }
+
+    /* 라디오 버튼 호버했을 때 왼쪽에 하얀 바 나타날 때 커지는 효과 */
+    .server__img::before {
+        height: 0;
+        content: "";
+        transform: scaleY(0) translateX(-0.25rem);
+        transform-origin: left center;
+        transition: transform 200ms ease;
+    }
+
+    .server__img:hover:not(:checked)::before {
+        content: "";
+        transform: scaleY(1) translateX(0);
+    }
+
+    /* 라디오 버튼 호버했을 때 효과 */
+    .server__img:hover,
+    .server__img:focus-visible {
+        position: relative;
+        background-color: var(--color-primary);
+        cursor: pointer;
+
+        /* 왼쪽 하얀 색 바 */
+        &::before {
+            position: absolute;
+            top: calc(1.5rem / 2);
+            right: 3.5rem;
+            width: 0.25rem;
+            height: 1.5rem;
+            border-radius: 0 0.25rem 0.25rem 0;
+            background: var(--color-white);
+            content: "";
+        }
+
+        /* 호버 메시지 창 */
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 3.75rem;
+            width: max-content;
+            padding: 0.625rem;
+            border: 1px solid #2e2e33;
+            border-radius: 0.375rem;
+            background: var(--color-grey-700);
+            color: var(--color-white-100);
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            content: attr(data-tooltip);
+            transform: translate(0, -50%);
+            /* 말풍선 모양 만들기 위해 보더 부분 자르기 */
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 100%,
+                0 calc(50% + 0.125rem),
+                0.125rem calc(50% + 0.25rem),
+                0.125rem calc(50% - 0.25rem),
+                0 calc(50% - 0.125rem)
+            );
+            z-index: 9;
+        }
+    }
+
+    /* 라디오 버튼 체크됐을 때 효과 */
+    .server__img:checked {
+        position: relative;
+        background-color: var(--color-primary);
+
+        /* 왼쪽 하얀 색 바 키우기 */
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 3.5rem;
+            width: 0.25rem;
+            height: 3rem;
+            border-radius: 0 0.25rem 0.25rem 0;
+            background: var(--color-white);
+            content: "";
+            transform: scaleY(1) translateX(0);
+            transition: none;
+        }
+    }
 }
 
+/* 서버 탭 앵커 버튼 컴포넌트 스타일링 */
 .server__button {
-    position: relative;
     width: 3rem;
     height: 3rem;
 
@@ -102,19 +222,20 @@
     }
 
     /* 첫 번째 버튼 밑에 구분선 추가 */
-    .server__button:first-child {
+    .server__radio:first-child {
         padding-bottom: 0.75rem;
         border-bottom: 1px solid var(--color-grey-700);
         box-sizing: content-box;
 
-        .server__link {
-            padding-inline: 0.5rem;
+        /* 호버 메시지 말풍선 화살표 부분 위치 조정 */
+        span:last-of-type {
+            top: calc(50% - (0.75rem / 2));
         }
     }
 
     /* 두 번째 버튼 서버 프로필 이미지 변경 */
-    .server__button:nth-child(2) {
-        .server__link {
+    .server__radio:nth-child(2) {
+        .server__img {
             background: url(../assets/server-profile.webp) no-repeat;
             background-size: cover;
         }
@@ -141,25 +262,4 @@
 .server__link:focus-visible::after {
     animation: pop 200ms ease-out;
     transform-origin: left center;
-}
-
-/* DM 및 서버 버튼 호버했을 때 왼쪽에 하얀 바 나타날 때 커지는 효과 */
-.server__button--hover {
-    display: block;
-    position: absolute;
-    top: calc(1.5rem / 2);
-    right: 3.5rem;
-    width: 0.25rem;
-    height: 1.5rem;
-    border-radius: 0 0.25rem 0.25rem 0;
-    background: var(--color-white);
-    transform: translateX(-0.25rem);
-    transform-origin: left center;
-    transition: transform 200ms ease;
-}
-
-/* DM 및 서버  버튼 호버했을 때 효과 */
-.server__link:hover + .server__button--hover,
-.server__link:focus-visible + .server__button--hover {
-    transform: translateX(0);
 }
