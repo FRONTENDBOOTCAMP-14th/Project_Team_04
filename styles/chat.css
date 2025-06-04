@@ -34,6 +34,21 @@
     }
 }
 
+.chat-header__server-icon {
+    filter: invert(47%) sepia(1%) saturate(2246%) hue-rotate(196deg)
+        brightness(110%) contrast(74%);
+}
+
+.chat-box__server-icon {
+    background-color: #393a41;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .chat-header__user-name {
     padding-left: 2px;
     margin-right: 8px;
@@ -80,7 +95,8 @@
 .btn-side div {
     width: 32px;
 }
-.chat-header__hide-profile img {
+.chat-header__hide-profile img,
+.chat-header__userlist-btn img {
     filter: invert(99%) sepia(92%) saturate(0%) hue-rotate(99deg)
         brightness(107%) contrast(97%);
 }
