@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="../styles/profile.css" />
         <link rel="stylesheet" href="../styles/chat-input-bar.css" />
         <link rel="stylesheet" href="../styles/side-profile-tab.css" />
-        <link rel="stylesheet" href="../styles/friends-header.css" />
-        <title>friends header 컴포넌트</title>
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
+        <title>chat input bar 컴포넌트</title>
     </head>
     <body>
         <!-- 챗 패널 컨테이너 -->
@@ -102,10 +102,11 @@
                         </div>
                         <!-- 유저이름 -->
                         <h1 class="chat-box__topbox--title">
-                            #친구페이지 헤더
+                            #채팅 입력 바 컴포넌트
                         </h1>
                         <p class="chat-box__topbox--title-description">
-                            #친구페이지 헤더의 컴포넌트를 소개합니다.
+                            #채팅 입력 바 컴포넌트는 채팅을 입력할 수 있는
+                            textarea와 버튼들이 있습니다.
                         </p>
                     </div>
 
@@ -130,183 +131,95 @@
                             <div class="chat-box__message">
                                 <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
                                 <p class="chat-box__one-line-text">
-                                    • Tab 구분선
+                                    • 이모지 버튼 (기본)
                                 </p>
                                 <p class="chat-box__one-line-text">
-                                    <span class="block-divider"></span>
+                                    <span class="button-icon--default">
+                                        <button
+                                            type="button"
+                                            class="gift"
+                                            tabindex="0">
+                                            <span class="sr-only"
+                                                >선물 보내기</span
+                                            >
+                                        </button></span
+                                    >
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 이모지 버튼 (hover)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="button-icon--hover">
+                                        <button
+                                            type="button"
+                                            class="gift"
+                                            tabindex="0">
+                                            <span class="sr-only"
+                                                >선물 보내기</span
+                                            >
+                                        </button></span
+                                    >
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 이모지 버튼 (실제 사용 예시)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="button-icon--example">
+                                        <button
+                                            type="button"
+                                            class="gift"
+                                            tabindex="0">
+                                            <span class="sr-only"
+                                                >선물 보내기</span
+                                            >
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="sticker"
+                                            tabindex="0">
+                                            <span class="sr-only"
+                                                >스티커 사용하기</span
+                                            >
+                                        </button></span
+                                    >
+                                </p>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/misung.webp"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">김미성</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:00</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                                <p class="chat-box__one-line-text">
+                                    • 채팅 입력 Textarea
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <br />
+                                    <span class="input__container--default">
+                                        <label for="chat" class="sr-only"
+                                            >채팅입력</label
+                                        ><textarea
+                                            id="chat"
+                                            placeholder="채팅을 입력해주세요."
+                                            tabindex="0"></textarea>
+                                    </span>
                                 </p>
                             </div>
                         </li>
                         <!-- 메세지 하나 끝 -->
                         <!-- li를 복사하면 메세지를 여러개 보낸것이 됨 -->
-                        <li class="chat-box__one-message">
-                            <div class="avatar__wrapper avatar__wrapper--large">
-                                <!-- 대화, 친구창 등 아바타 -->
-                                <img
-                                    src="../assets/misung.webp"
-                                    class="avatar__img" />
-                                <div
-                                    class="avatar__indicator avatar__indicator--status offline"></div>
-                            </div>
-                            <div class="chat-box__info">
-                                <span class="chat-box__info--name">김미성</span>
-                                <span class="chat-box__info--time"
-                                    >오후 3:00</span
-                                >
-                            </div>
-                            <div class="chat-box__message">
-                                <p class="chat-box__one-line-text">
-                                    • 텍스트 Tab (selected)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="tab-list--selected">
-                                        <input
-                                            type="radio"
-                                            name="tab"
-                                            id="online"
-                                            class="sr-only"
-                                            checked /><label for="online"
-                                            >온라인</label
-                                        ></span
-                                    >
-                                    <br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    • 텍스트 Tab (unselected)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="tab-list--unselected">
-                                        <input
-                                            type="radio"
-                                            name="tab"
-                                            id="online"
-                                            class="sr-only" /><label
-                                            for="online"
-                                            >온라인</label
-                                        ></span
-                                    >
-                                    <br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    • 텍스트 Tab (selected + hover)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="tab-list--hover">
-                                        <input
-                                            type="radio"
-                                            name="tab"
-                                            id="online"
-                                            class="sr-only" /><label
-                                            for="online"
-                                            >온라인</label
-                                        ></span
-                                    >
-                                    <br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    • 텍스트 Tab (실제 사용 예시)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="">
-                                        <span class="tab-list--example">
-                                            <input
-                                                type="radio"
-                                                name="tab"
-                                                id="all"
-                                                class="sr-only"
-                                                checked /><label for="all"
-                                                >모두</label
-                                            ></span
-                                        >
-                                        <span class="tab-list--example">
-                                            <input
-                                                type="radio"
-                                                name="tab"
-                                                id="pending"
-                                                class="sr-only" /><label
-                                                for="pending"
-                                                >대기 중</label
-                                            ></span
-                                        >
-                                    </span>
-                                    <br />
-                                </p>
-                            </div>
-                        </li>
-                        <li class="chat-box__one-message">
-                            <div class="avatar__wrapper avatar__wrapper--large">
-                                <!-- 대화, 친구창 등 아바타 -->
-                                <img
-                                    src="../assets/misung.webp"
-                                    class="avatar__img" />
-                                <div
-                                    class="avatar__indicator avatar__indicator--status offline"></div>
-                            </div>
-                            <div class="chat-box__info">
-                                <span class="chat-box__info--name">김미성</span>
-                                <span class="chat-box__info--time"
-                                    >오후 3:00</span
-                                >
-                            </div>
-                            <div class="chat-box__message">
-                                <p class="chat-box__one-line-text">
-                                    • Bottom Tooltip
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span
-                                        class="tooltip-bottom"
-                                        data-tooltip="hello 🌞"
-                                        ><span>여기에 마우스를 올려주세요</span>
-                                    </span>
-                                    <br /><br />
-                                </p>
-                            </div>
-                        </li>
-                        <li class="chat-box__one-message">
-                            <div class="avatar__wrapper avatar__wrapper--large">
-                                <!-- 대화, 친구창 등 아바타 -->
-                                <img
-                                    src="../assets/misung.webp"
-                                    class="avatar__img" />
-                                <div
-                                    class="avatar__indicator avatar__indicator--status offline"></div>
-                            </div>
-                            <div class="chat-box__info">
-                                <span class="chat-box__info--name">김미성</span>
-                                <span class="chat-box__info--time"
-                                    >오후 3:00</span
-                                >
-                            </div>
-                            <div class="chat-box__message">
-                                <p class="chat-box__one-line-text">
-                                    • 친구 추가 버튼 (기본) <br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="list-button--default">
-                                        <button>친구 추가하기</button>
-                                    </span>
-                                    <br /><br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    • 친구 추가 버튼 (hover)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="list-button--hover">
-                                        <button>친구 추가하기</button>
-                                    </span>
-                                    <br /><br />
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    • 친구 추가 버튼 (실제 사용 예시)
-                                </p>
-                                <p class="chat-box__one-line-text">
-                                    <span class="list-button--example">
-                                        <button>친구 추가하기</button>
-                                    </span>
-                                    <br /><br />
-                                </p>
-                            </div>
-                        </li>
                     </ol>
                 </section>
                 <!-- 입력창 -->
