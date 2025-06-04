@@ -278,14 +278,18 @@
                     </ul>
                     <ul class="button-list">
                         <li>
-                            <button class="msg-button" aria-label="메세지 추가">
+                            <button
+                                class="msg-button tooltip-header"
+                                data-tooltip="메세지 보내기"
+                                aria-label="메세지 추가">
                                 <img src="../assets/add_message.svg" alt="" />
                             </button>
                         </li>
                         <li><span class="block-divider"></span></li>
                         <li>
                             <button
-                                class="inbox-button"
+                                class="inbox-button tooltip-header"
+                                data-tooltip="받은 편지함 "
                                 aria-label="메세지함 보기">
                                 <img src="../assets/inbox.svg" alt="" />
                             </button>
@@ -296,7 +300,8 @@
                                 target="_blank"
                                 rel="noopenner noreferrer"
                                 aria-label="도움 페이지로 이동"
-                                class="help-link"
+                                class="help-link tooltip-header"
+                                data-tooltip="도움말"
                                 ><img
                                     src="../assets/question_circle.svg"
                                     alt=""
