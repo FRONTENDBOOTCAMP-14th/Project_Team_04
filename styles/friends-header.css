@@ -1,8 +1,8 @@
 .header {
     background-color: var(--color-grey-550);
     display: flex;
-    padding-top: 0.805rem;
-    padding-bottom: 14.0192px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     padding-inline: 1.0625rem;
 
     nav {
@@ -45,6 +45,7 @@
         white-space: nowrap;
         font-weight: 500;
         transition: background-color 0.2s ease 0.1s;
+
         button {
             all: unset;
             cursor: pointer;
@@ -92,6 +93,7 @@
             white-space: nowrap;
         }
     }
+
     /* friend-header 용 tooltip  */
     .tooltip-header {
         width: 2.5rem;
@@ -139,7 +141,12 @@
     }
 }
 
-@media (max-width: 850px) {
+.header > nav {
+    container-type: inline-size;
+    container-name: header-nav;
+}
+
+@container header-nav (max-width: 840px) {
     .tab-list {
         overflow-x: auto;
         white-space: nowrap;
