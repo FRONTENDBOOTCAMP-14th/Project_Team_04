@@ -130,17 +130,9 @@ body {
         border-radius: 0.5rem;
         align-items: center;
 
-        .channel__button {
-            color: var(--color-grey-200);
+        .channel__radio {
             outline: none;
-            text-decoration: none;
-            display: flex;
-            min-width: 0;
-            padding: 0.25rem 0.5rem;
-            flex: 1;
-            align-items: center;
-            column-gap: 0.5rem;
-            cursor: pointer;
+            appearance: none;
 
             &:focus-visible ~ label,
             &:checked:focus-visible ~ label {
@@ -148,10 +140,16 @@ body {
                 outline-offset: 2px;
                 border-radius: 0.5rem;
             }
+        }
 
-            &:hover {
-                color: var(--color-white-100);
-            }
+        label {
+            display: flex;
+            min-width: 0;
+            padding: 0.25rem 0.5rem;
+            flex: 1;
+            align-items: center;
+            column-gap: 0.5rem;
+            cursor: pointer;
 
             .channel__text,
             .channel__voice {
@@ -211,6 +209,26 @@ body {
 
             .channel__list--hover {
                 display: flex;
+            }
+        }
+
+        &:has(.channel__radio:checked) {
+            background: var(--color-grey-700);
+        }
+
+        .channel__radio:checked ~ label {
+            color: var(--color-white-100);
+
+            svg {
+                fill: var(--color-white-100);
+            }
+        }
+
+        .channel__radio:checked ~ .channel__list--hover {
+            display: flex;
+
+            svg {
+                fill: var(--color-white-100);
             }
         }
     }
