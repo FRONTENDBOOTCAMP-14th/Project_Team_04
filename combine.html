@@ -19,6 +19,9 @@
         <link rel="stylesheet" href="./styles/server-tab.css" />
         <link rel="stylesheet" href="./styles/user-profile.css" />
         <link rel="stylesheet" href="./styles/direct-message-tab.css" />
+        <link rel="stylesheet" href="./styles/chat.css" />
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
+        <link rel="stylesheet" href="../styles/side-profile-tab.css" />
     </head>
     <body>
         <div class="application">
@@ -134,6 +137,7 @@
                                 <span class="sr-only">(다이렉트 메시지)</span>
                             </label>
                             <input
+                                onclick="loadPage('./playerinfo/misung.html', 0)"
                                 class="sr-only"
                                 name="nickname"
                                 type="radio"
@@ -156,6 +160,7 @@
                                 <span class="sr-only">(다이렉트 메시지)</span>
                             </label>
                             <input
+                                onclick="loadPage('./playerinfo/dohyeon_chat_panel.html', 0)"
                                 class="sr-only"
                                 name="nickname"
                                 type="radio"
@@ -178,6 +183,7 @@
                                 <span class="sr-only">(다이렉트 메시지)</span>
                             </label>
                             <input
+                                onclick="loadPage('./playerinfo/jieun-chat-pannel.html', 0)"
                                 class="sr-only"
                                 name="nickname"
                                 type="radio"
@@ -200,6 +206,7 @@
                                 <span class="sr-only">(다이렉트 메시지)</span>
                             </label>
                             <input
+                                onclick="loadPage('./playerinfo/seokgeun.html', 0)"
                                 class="sr-only"
                                 name="nickname"
                                 type="radio"
@@ -562,4 +569,5 @@
             </section>
         </div>
     </body>
+    <script src="scripts/paging.js"></script>
 </html>

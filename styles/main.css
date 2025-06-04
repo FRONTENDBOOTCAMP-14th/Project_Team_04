@@ -37,6 +37,13 @@ body {
         "bottom-user-profile bottom-user-profile main-panel";
 }
 
+.application__not-friend-list {
+    grid-template-areas:
+        "side-server-bar side-friend-list main-panel"
+        "side-server-bar side-friend-list main-panel"
+        "bottom-user-profile bottom-user-profile main-panel";
+}
+
 .side-server-bar {
     grid-area: side-server-bar;
 }
