@@ -15,8 +15,6 @@
 
 .friend-list-contanier {
     background-color: var(--main-panel-background-color);
-    padding-left: 12px;
-    padding-right: 8px;
     height: 100%;
 }
 
