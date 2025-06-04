@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/chat.css" />
+        <link rel="stylesheet" href="../styles/friend-list.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
+        <link rel="stylesheet" href="../styles/side-profile-tab.css" />
+        <link rel="stylesheet" href="../styles/server-tab.css" />
+        <link rel="stylesheet" href="../styles/channel-list.css" />
+        <link rel="stylesheet" href="../styles/tooltip.css" />
+        <link rel="stylesheet" href="../styles/jieun-atomic.css" />
+        <title>컴포넌트 | 정지은</title>
+    </head>
+    <body>
+        <!-- 챗 패널 컨테이너 -->
+        <section class="chat-panel-container">
+            <!-- 왼쪽 -->
+            <div class="chat-panel-container__left-side">
+                <!-- 챗 패널 상단 헤더 -->
+                <section class="chat-header">
+                    <div class="chat-header__user-profile-side">
+                        <svg
+                            class="chat-header__server-icon"
+                            x="0"
+                            y="0"
+                            class="icon__9293f"
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                        <span class="chat-header__sec-name"
+                            >컴포넌트 | 정지은</span
+                        >
+                    </div>
+                    <div class="btn-side">
+                        <div class="btn-side__btn chat-header__thread-btn">
+                            <img src="../assets/threadimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__alarm-btn">
+                            <img src="../assets/alarmimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__pin-btn">
+                            <img src="../assets/pinimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__userlist-btn">
+                            <img src="../assets/userlistimg.svg" alt="" />
+                        </div>
+                        <section class="friend-list-search small">
+                            <input
+                                class="friend-list-search__input"
+                                type="search"
+                                placeholder="검색하기"
+                                name=""
+                                id="" />
+                            <svg
+                                class="friend_list-icon"
+                                aria-label="지우기"
+                                aria-hidden="false"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="currentColor"
+                                    d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                                    class=""></path>
+                            </svg>
+                        </section>
+                    </div>
+                </section>
+                <!-- 채팅창 -->
+                <section class="chat-box">
+                    <div class="chat-box__topbox">
+                        <div class="chat-box__server-icon">
+                            <svg
+                                aria-hidden="true"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="42"
+                                height="42"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="#fff"
+                                    fill-rule="evenodd"
+                                    d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+                                    clip-rule="evenodd"
+                                    class=""></path>
+                            </svg>
+                        </div>
+                        <!-- 유저이름 -->
+                        <h1 class="chat-box__topbox--title">
+                            #컴포넌트 | 정지은에 오신 걸 환영합니다!
+                        </h1>
+                        <p class="chat-box__topbox--title-description">
+                            #컴포넌트 | 정지은 채널의 시작이에요.
+                        </p>
+                    </div>
+
+                    <!-- 실제 입력 창 -->
+                    <ol class="chat-box__message-list">
+                        <!-- 메세지 하나 -->
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:01</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                                <p class="chat-box__one-line-text">
+                                    서버 탭 채널 버튼(라디오) 컴포넌트
+                                </p>
+                                <div class="chat-box__one-line-text">
+                                    <div class="server__radio">
+                                        <input
+                                            class="server__img profile__img"
+                                            type="radio"
+                                            name="server"
+                                            id="server1"
+                                            data-tooltip="호버 메시지"
+                                            checked /><label
+                                            class="sr-only"
+                                            for="server1"
+                                            >서버1</label
+                                        ><span
+                                            class="server__radio--hover"
+                                            aria-hidden="true"></span>
+                                    </div>
+                                    <div class="server__radio">
+                                        <input
+                                            class="server__img profile__img"
+                                            type="radio"
+                                            name="server"
+                                            id="server1"
+                                            data-tooltip="호버 메시지" /><label
+                                            class="sr-only"
+                                            for="server1"
+                                            >서버1</label
+                                        ><span
+                                            class="server__radio--hover"
+                                            aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 메세지 하나 끝 -->
+                        <!-- li를 복사하면 메세지를 여러개 보낸것이 됨 -->
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:03</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    서버 탭 채널 버튼(앵커) 컴포넌트
+                                </p>
+                                <div class="chat-box__one-line-text">
+                                    <div class="server__button">
+                                        <a
+                                            class="server__link"
+                                            href="#"
+                                            data-tooltip="호버 메시지">
+                                            <svg
+                                                class="server__icon"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="21"
+                                                height="21"
+                                                viewBox="0 0 21 21"
+                                                fill="none">
+                                                <path
+                                                    d="M10.5,0.5c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S16,0.5,10.5,0.5z M17,11.3h-5.7V17H9.7v-5.7H4V9.7h5.7V4h1.6v5.7H17V11.3z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:01</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                                <a
+                                    class="chat-box__one-line-text"
+                                    href="../components/server-tab.html">
+                                    서버 탭 컴포넌트 보러 가기
+                                </a>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:14</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    채널 목록 그룹 토글 컴포넌트
+                                </p>
+                                <div class="chat-box__one-line-text">
+                                    <details class="channel__disclosure" open>
+                                        <summary>
+                                            <h3 class="channel__heading">
+                                                채널 그룹 이름
+                                            </h3>
+                                        </summary>
+                                    </details>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:27</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    채널 목록 호버 버튼 컴포넌트
+                                </p>
+                                <div class="chat-box__one-line-text">
+                                    <div class="channel__button">
+                                        <a
+                                            class="channel__chat"
+                                            data-tooltip="채팅 열기"
+                                            aria-label="채팅 열기"
+                                            href="#">
+                                            <svg
+                                                aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:27</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    채널 목록 버튼 컴포넌트
+                                </p>
+                                <div class="chat-box__one-line-text">
+                                    <div class="channel__group">
+                                        <div class="channel__list">
+                                            <input
+                                                class="channel__radio sr-only"
+                                                type="radio"
+                                                name="channel"
+                                                id="channel1"
+                                                checked /><label for="channel1">
+                                                <div
+                                                    class="channel__voice"
+                                                    data-tooltip="음성">
+                                                    <svg
+                                                        aria-label="음성 채널"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 3a1 1 0 0 0-1-1h-.06a1 1 0 0 0-.74.32L5.92 7H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2.92l4.28 4.68a1 1 0 0 0 .74.32H11a1 1 0 0 0 1-1V3ZM15.1 20.75c-.58.14-1.1-.33-1.1-.92v-.03c0-.5.37-.92.85-1.05a7 7 0 0 0 0-13.5A1.11 1.11 0 0 1 14 4.2v-.03c0-.6.52-1.06 1.1-.92a9 9 0 0 1 0 17.5Z"></path>
+                                                        <path
+                                                            d="M15.16 16.51c-.57.28-1.16-.2-1.16-.83v-.14c0-.43.28-.8.63-1.02a3 3 0 0 0 0-5.04c-.35-.23-.63-.6-.63-1.02v-.14c0-.63.59-1.1 1.16-.83a5 5 0 0 1 0 9.02Z"></path>
+                                                    </svg>
+                                                </div>
+                                                <span
+                                                    data-tooltip="채널 이름"
+                                                    class="channel__title"
+                                                    >채널 이름</span
+                                                >
+                                            </label>
+                                            <div class="channel__list--hover">
+                                                <a
+                                                    class="channel__chat"
+                                                    data-tooltip="채팅 열기"
+                                                    aria-label="채팅 열기"
+                                                    href="#">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"></path>
+                                                    </svg>
+                                                </a>
+                                                <button
+                                                    class="channel__invitation"
+                                                    type="button"
+                                                    data-tooltip="초대 코드 만들기"
+                                                    aria-label="초대 코드 만들기">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M14.5 8a3 3 0 1 0-2.7-4.3c-.2.4.06.86.44 1.12a5 5 0 0 1 2.14 3.08c.01.06.06.1.12.1ZM16.62 13.17c-.22.29-.65.37-.92.14-.34-.3-.7-.57-1.09-.82-.52-.33-.7-1.05-.47-1.63.11-.27.2-.57.26-.87.11-.54.55-1 1.1-.92 1.6.2 3.04.92 4.15 1.98.3.27-.25.95-.65.95a3 3 0 0 0-2.38 1.17ZM15.19 15.61c.13.16.02.39-.19.39a3 3 0 0 0-1.52 5.59c.2.12.26.41.02.41h-8a.5.5 0 0 1-.5-.5v-2.1c0-.25-.31-.33-.42-.1-.32.67-.67 1.58-.88 2.54a.2.2 0 0 1-.2.16A1.5 1.5 0 0 1 2 20.5a7.5 7.5 0 0 1 13.19-4.89ZM9.5 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM15.5 22Z"></path>
+                                                        <path
+                                                            d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"></path>
+                                                    </svg>
+                                                </button>
+                                                <a
+                                                    class="channel__setting"
+                                                    data-tooltip="채널 편집"
+                                                    aria-label="채널 편집"
+                                                    href="#">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="channel__list">
+                                            <input
+                                                class="channel__radio sr-only"
+                                                type="radio"
+                                                name="channel"
+                                                id="channel2" /><label
+                                                for="channel2">
+                                                <div
+                                                    class="channel__voice"
+                                                    data-tooltip="텍스트">
+                                                    <svg
+                                                        aria-label="텍스트 채널"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                                <span
+                                                    data-tooltip="채널 이름"
+                                                    class="channel__title"
+                                                    >채널 이름</span
+                                                >
+                                            </label>
+                                            <div class="channel__list--hover">
+                                                <button
+                                                    class="channel__invitation"
+                                                    type="button"
+                                                    data-tooltip="초대 코드 만들기"
+                                                    aria-label="초대 코드 만들기">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M14.5 8a3 3 0 1 0-2.7-4.3c-.2.4.06.86.44 1.12a5 5 0 0 1 2.14 3.08c.01.06.06.1.12.1ZM16.62 13.17c-.22.29-.65.37-.92.14-.34-.3-.7-.57-1.09-.82-.52-.33-.7-1.05-.47-1.63.11-.27.2-.57.26-.87.11-.54.55-1 1.1-.92 1.6.2 3.04.92 4.15 1.98.3.27-.25.95-.65.95a3 3 0 0 0-2.38 1.17ZM15.19 15.61c.13.16.02.39-.19.39a3 3 0 0 0-1.52 5.59c.2.12.26.41.02.41h-8a.5.5 0 0 1-.5-.5v-2.1c0-.25-.31-.33-.42-.1-.32.67-.67 1.58-.88 2.54a.2.2 0 0 1-.2.16A1.5 1.5 0 0 1 2 20.5a7.5 7.5 0 0 1 13.19-4.89ZM9.5 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM15.5 22Z"></path>
+                                                        <path
+                                                            d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"></path>
+                                                    </svg>
+                                                </button>
+                                                <a
+                                                    class="channel__setting"
+                                                    data-tooltip="채널 편집"
+                                                    aria-label="채널 편집"
+                                                    href="#">
+                                                    <svg
+                                                        aria-hidden="true"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:01</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                                <a
+                                    class="chat-box__one-line-text"
+                                    href="../components/channel-list.html">
+                                    채널 목록 탭 컴포넌트 보러 가기
+                                </a>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/jieun.png"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">정지은</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:27</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    툴팁(호버 메시지) 컴포넌트
+                                </p>
+                                <p
+                                    class="chat-box__one-line-text tooltip"
+                                    data-tooltip="오른쪽 툴팁">
+                                    오른쪽
+                                </p>
+                                <p
+                                    class="chat-box__one-line-text tooltip"
+                                    data-tooltip="왼쪽 툴팁">
+                                    왼쪽
+                                </p>
+                                <p
+                                    class="chat-box__one-line-text tooltip"
+                                    data-tooltip="아래쪽 툴팁">
+                                    아래쪽
+                                </p>
+                                <p
+                                    class="chat-box__one-line-text tooltip"
+                                    data-tooltip="위쪽 툴팁">
+                                    위쪽
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+                <!-- 입력창 -->
+                <section class="chat-input-container">
+                    <form action="" tabindex="0" tabindex="0">
+                        <button class="attach" type="button">
+                            <span class="sr-only">첨부파일 추가하기</span>
+                        </button>
+                        <div class="input__container">
+                            <label for="chat" class="sr-only">채팅입력</label
+                            ><textarea
+                                id="chat"
+                                placeholder="채팅을 입력해주세요."
+                                tabindex="0"></textarea>
+                        </div>
+                        <div class="button__container">
+                            <button type="button" class="gift" tabindex="0">
+                                <span class="sr-only">선물 보내기</span>
+                            </button>
+                            <button type="button" class="gif">
+                                <span class="sr-only">gif 사용하기</span>
+                            </button>
+                            <button type="button" class="sticker">
+                                <span class="sr-only">스티커 사용하기</span>
+                            </button>
+                            <button type="button" class="emoji">
+                                <span class="sr-only">이모지 사용하기</span>
+                            </button>
+                            <button type="button" class="game">
+                                <span class="sr-only">게임 추가하기</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <!-- 우측 패널, 사진, 이름 등 수정 필요 -->
+        </section>
+    </body>
+</html>

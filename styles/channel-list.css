@@ -188,13 +188,18 @@ body {
             .channel__chat:focus-visible,
             .channel__invitation:focus-visible,
             .channel__setting:focus-visible {
-                outline: 1px solid var(--color-white);
-                outline-offset: 2px;
                 border-radius: 0.25rem;
 
                 svg {
                     fill: var(--color-white-100);
                 }
+            }
+
+            .channel__chat:focus-visible,
+            .channel__invitation:focus-visible,
+            .channel__setting:focus-visible {
+                outline: 1px solid var(--color-white);
+                outline-offset: 2px;
             }
 
             svg {
