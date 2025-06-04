@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/chat.css" />
+        <link rel="stylesheet" href="../styles/friend-list.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
+        <link rel="stylesheet" href="../styles/side-profile-tab.css" />
+        <link rel="stylesheet" href="../styles/friends-header.css" />
+        <title>friends header 컴포넌트</title>
+    </head>
+    <body>
+        <!-- 챗 패널 컨테이너 -->
+        <section class="chat-panel-container">
+            <!-- 왼쪽 -->
+            <div class="chat-panel-container__left-side">
+                <!-- 챗 패널 상단 헤더 -->
+                <section class="chat-header">
+                    <div class="chat-header__user-profile-side">
+                        <svg
+                            class="chat-header__server-icon"
+                            x="0"
+                            y="0"
+                            class="icon__9293f"
+                            aria-hidden="true"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+                                clip-rule="evenodd"
+                                class=""></path>
+                        </svg>
+                        <span class="chat-header__sec-name">서버</span>
+                    </div>
+                    <div class="btn-side">
+                        <div class="btn-side__btn chat-header__thread-btn">
+                            <img src="../assets/threadimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__alarm-btn">
+                            <img src="../assets/alarmimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__pin-btn">
+                            <img src="../assets/pinimg.svg" alt="" />
+                        </div>
+                        <div class="btn-side__btn chat-header__userlist-btn">
+                            <img src="../assets/userlistimg.svg" alt="" />
+                        </div>
+                        <section class="friend-list-search small">
+                            <input
+                                class="friend-list-search__input"
+                                type="search"
+                                placeholder="검색하기"
+                                name=""
+                                id="" />
+                            <svg
+                                class="friend_list-icon"
+                                aria-label="지우기"
+                                aria-hidden="false"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="currentColor"
+                                    d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                                    class=""></path>
+                            </svg>
+                        </section>
+                    </div>
+                </section>
+                <!-- 채팅창 -->
+                <section class="chat-box">
+                    <div class="chat-box__topbox">
+                        <div class="chat-box__server-icon">
+                            <svg
+                                aria-hidden="true"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="42"
+                                height="42"
+                                fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="#fff"
+                                    fill-rule="evenodd"
+                                    d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"
+                                    clip-rule="evenodd"
+                                    class=""></path>
+                            </svg>
+                        </div>
+                        <!-- 유저이름 -->
+                        <h1 class="chat-box__topbox--title">
+                            #친구페이지 헤더
+                        </h1>
+                        <p class="chat-box__topbox--title-description">
+                            #친구페이지 헤더의 컴포넌트를 소개합니다.
+                        </p>
+                    </div>
+
+                    <!-- 실제 입력 창 -->
+                    <ol class="chat-box__message-list">
+                        <!-- 메세지 하나 -->
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/misung.webp"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">김미성</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:00</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                                <p class="chat-box__one-line-text">
+                                    • Tab 구분선
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="block-divider"></span>
+                                </p>
+                            </div>
+                        </li>
+                        <!-- 메세지 하나 끝 -->
+                        <!-- li를 복사하면 메세지를 여러개 보낸것이 됨 -->
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/misung.webp"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">김미성</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:00</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    • 텍스트 Tab (selected)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="tab-list--selected">
+                                        <input
+                                            type="radio"
+                                            name="tab"
+                                            id="online"
+                                            class="sr-only"
+                                            checked /><label for="online"
+                                            >온라인</label
+                                        ></span
+                                    >
+                                    <br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 텍스트 Tab (unselected)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="tab-list--unselected">
+                                        <input
+                                            type="radio"
+                                            name="tab"
+                                            id="online"
+                                            class="sr-only" /><label
+                                            for="online"
+                                            >온라인</label
+                                        ></span
+                                    >
+                                    <br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 텍스트 Tab (selected + hover)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="tab-list--hover">
+                                        <input
+                                            type="radio"
+                                            name="tab"
+                                            id="online"
+                                            class="sr-only" /><label
+                                            for="online"
+                                            >온라인</label
+                                        ></span
+                                    >
+                                    <br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 텍스트 Tab (실제 사용 예시)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="">
+                                        <span class="tab-list--example">
+                                            <input
+                                                type="radio"
+                                                name="tab"
+                                                id="all"
+                                                class="sr-only"
+                                                checked /><label for="all"
+                                                >모두</label
+                                            ></span
+                                        >
+                                        <span class="tab-list--example">
+                                            <input
+                                                type="radio"
+                                                name="tab"
+                                                id="pending"
+                                                class="sr-only" /><label
+                                                for="pending"
+                                                >대기 중</label
+                                            ></span
+                                        >
+                                    </span>
+                                    <br />
+                                </p>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/misung.webp"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">김미성</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:00</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    • Bottom Tooltip
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span
+                                        class="tooltip-bottom"
+                                        data-tooltip="hello 🌞"
+                                        ><span>여기에 마우스를 올려주세요</span>
+                                    </span>
+                                    <br /><br />
+                                </p>
+                            </div>
+                        </li>
+                        <li class="chat-box__one-message">
+                            <div class="avatar__wrapper avatar__wrapper--large">
+                                <!-- 대화, 친구창 등 아바타 -->
+                                <img
+                                    src="../assets/misung.webp"
+                                    class="avatar__img" />
+                                <div
+                                    class="avatar__indicator avatar__indicator--status offline"></div>
+                            </div>
+                            <div class="chat-box__info">
+                                <span class="chat-box__info--name">김미성</span>
+                                <span class="chat-box__info--time"
+                                    >오후 3:00</span
+                                >
+                            </div>
+                            <div class="chat-box__message">
+                                <p class="chat-box__one-line-text">
+                                    • 친구 추가 버튼 (기본) <br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="list-button--default">
+                                        <button>친구 추가하기</button>
+                                    </span>
+                                    <br /><br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 친구 추가 버튼 (hover)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="list-button--hover">
+                                        <button>친구 추가하기</button>
+                                    </span>
+                                    <br /><br />
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    • 친구 추가 버튼 (실제 사용 예시)
+                                </p>
+                                <p class="chat-box__one-line-text">
+                                    <span class="list-button--example">
+                                        <button>친구 추가하기</button>
+                                    </span>
+                                    <br /><br />
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+                <!-- 입력창 -->
+                <section class="chat-input-container">
+                    <form action="" tabindex="0" tabindex="0">
+                        <button class="attach" type="button">
+                            <span class="sr-only">첨부파일 추가하기</span>
+                        </button>
+                        <div class="input__container">
+                            <label for="chat" class="sr-only">채팅입력</label
+                            ><textarea
+                                id="chat"
+                                placeholder="채팅을 입력해주세요."
+                                tabindex="0"></textarea>
+                        </div>
+                        <div class="button__container">
+                            <button type="button" class="gift" tabindex="0">
+                                <span class="sr-only">선물 보내기</span>
+                            </button>
+                            <button type="button" class="gif">
+                                <span class="sr-only">gif 사용하기</span>
+                            </button>
+                            <button type="button" class="sticker">
+                                <span class="sr-only">스티커 사용하기</span>
+                            </button>
+                            <button type="button" class="emoji">
+                                <span class="sr-only">이모지 사용하기</span>
+                            </button>
+                            <button type="button" class="game">
+                                <span class="sr-only">게임 추가하기</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <!-- 우측 패널, 사진, 이름 등 수정 필요 -->
+        </section>
+    </body>
+</html>
