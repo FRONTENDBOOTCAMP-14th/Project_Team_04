@@ -15,80 +15,76 @@
     <body>
         <!-- 챗 패널 컨테이너 -->
         <section class="chat-panel-container">
+            <section class="chat-header">
+                <div class="chat-header__user-profile-side">
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--small">
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status online"></div>
+                    </div>
+                    <span class="chat-header__user-name">남도현</span>
+                    <svg
+                        class="chat-header__dot"
+                        aria-hidden="true"
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 4 4">
+                        <circle
+                            cx="2"
+                            cy="2"
+                            r="2"
+                            fill="currentColor"></circle>
+                    </svg>
+
+                    <span class="chat-header__sec-name-text">다른 별명</span>
+                    <span class="chat-header__sec-name">15. 남도현</span>
+                </div>
+                <div class="btn-side">
+                    <div class="btn-side__btn chat-header__call-btn">
+                        <img src="../assets/callimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__cam-btn">
+                        <img src="../assets/videochatimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__pin-btn">
+                        <img src="../assets/pinimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__add-friend">
+                        <img src="../assets/addfriend.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__hide-profile">
+                        <img src="../assets/hideprofileimg.svg" alt="" />
+                    </div>
+                    <section class="friend-list-search small">
+                        <input
+                            class="friend-list-search__input"
+                            type="search"
+                            placeholder="검색하기"
+                            name=""
+                            id="" />
+                        <svg
+                            class="friend_list-icon"
+                            aria-label="지우기"
+                            aria-hidden="false"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                                class=""></path>
+                        </svg>
+                    </section>
+                </div>
+            </section>
             <!-- 왼쪽 -->
             <div class="chat-panel-container__left-side">
                 <!-- 챗 패널 상단 헤더 -->
-                <section class="chat-header">
-                    <div class="chat-header__user-profile-side">
-                        <div
-                            class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--small">
-                            <img
-                                src="../assets/dohyeon.webp"
-                                class="avatar__img" />
-                            <div
-                                class="avatar__indicator avatar__indicator--status online"></div>
-                        </div>
-                        <span class="chat-header__user-name">남도현</span>
-                        <svg
-                            class="chat-header__dot"
-                            aria-hidden="true"
-                            role="img"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 4 4">
-                            <circle
-                                cx="2"
-                                cy="2"
-                                r="2"
-                                fill="currentColor"></circle>
-                        </svg>
-
-                        <span class="chat-header__sec-name-text"
-                            >다른 별명</span
-                        >
-                        <span class="chat-header__sec-name">15. 남도현</span>
-                    </div>
-                    <div class="btn-side">
-                        <div class="btn-side__btn chat-header__call-btn">
-                            <img src="../assets/callimg.svg" alt="" />
-                        </div>
-                        <div class="btn-side__btn chat-header__cam-btn">
-                            <img src="../assets/videochatimg.svg" alt="" />
-                        </div>
-                        <div class="btn-side__btn chat-header__pin-btn">
-                            <img src="../assets/pinimg.svg" alt="" />
-                        </div>
-                        <div class="btn-side__btn chat-header__add-friend">
-                            <img src="../assets/addfriend.svg" alt="" />
-                        </div>
-                        <div class="btn-side__btn chat-header__hide-profile">
-                            <img src="../assets/hideprofileimg.svg" alt="" />
-                        </div>
-                        <section class="friend-list-search small">
-                            <input
-                                class="friend-list-search__input"
-                                type="search"
-                                placeholder="검색하기"
-                                name=""
-                                id="" />
-                            <svg
-                                class="friend_list-icon"
-                                aria-label="지우기"
-                                aria-hidden="false"
-                                role="img"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24">
-                                <path
-                                    fill="currentColor"
-                                    d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
-                                    class=""></path>
-                            </svg>
-                        </section>
-                    </div>
-                </section>
                 <!-- 채팅창 -->
                 <section class="chat-box">
                     <div class="chat-box__topbox">
