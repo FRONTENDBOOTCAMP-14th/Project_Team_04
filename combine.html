@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="./styles/chat.css" />
         <link rel="stylesheet" href="../styles/chat-input-bar.css" />
         <link rel="stylesheet" href="../styles/side-profile-tab.css" />
+        <link rel="stylesheet" href="../styles/channel-list.css" />
         <link rel="stylesheet" href="../styles/modal-dialog.css" />
     </head>
     <body>
@@ -31,6 +32,7 @@
                 <li class="server__radio">
                     <input
                         checked
+                        onclick="loadServerPage('./components/direct-message-tab.html', 0)"
                         class="server__img"
                         type="radio"
                         name="server"
@@ -45,6 +47,7 @@
                 </li>
                 <li class="server__radio">
                     <input
+                        onclick="loadServerPage('./components/channel-list.html', 1)"
                         class="server__img"
                         type="radio"
                         name="server"
@@ -105,7 +108,9 @@
                 </div>
 
                 <div class="friends-btn-wrapper">
-                    <a class="friends-btn" href="/">
+                    <a
+                        class="friends-btn"
+                        onclick="loadPage('./components/friend-list.html', 2)">
                         <div class="friends-btn__contents">
                             <img src="../assets/friends.svg" alt="" />
                             <span>친구</span>

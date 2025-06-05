@@ -5,11 +5,19 @@
     grid-template-rows: auto 1fr;
 }
 
+.chat-panel-container.chat-panel-server-panel {
+    grid-template-columns: 1fr;
+}
+
 .chat-panel-container__left-side {
     flex: 1;
     height: calc(100vh - 48px);
     display: flex;
     flex-direction: column;
+}
+
+.chat-panel-container__left-side.chat-panel-server-panel__left-size {
+    height: 100vh;
 }
 
 .side-profile-tab {
