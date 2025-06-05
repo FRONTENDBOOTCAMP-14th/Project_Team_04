@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../styles/base.css" />
         <link rel="stylesheet" href="../styles/main.css" />
         <link rel="stylesheet" href="../styles/direct-message-tab.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
     </head>
     <body>
         <div class="direct-message-tab">
@@ -34,62 +35,94 @@
                 </div>
                 <ul class="direct-message-list">
                     <li class="direct-message-list__0">
-                        <div class="profile">
-                            <span class="profile__img"></span>
+                        <div
+                            class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--middle">
+                            <img
+                                src="../assets/misung.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
                         </div>
-                        <label for="nickname0">닉네임</label>
+                        <label for="nickname0"
+                            >김미성
+                            <span class="sr-only">(다이렉트 메시지)</span>
+                        </label>
                         <input
+                            onclick="loadPage('./playerinfo/misung.html', 0)"
                             class="sr-only"
                             name="nickname"
                             type="radio"
-                            id="nickname0"
-                        />
-                        <button type="button">
+                            id="nickname0" />
+                        <button aria-label="개인 메시지 닫기" type="button">
                             <img src="../assets/close.svg" alt="" />
                         </button>
                     </li>
                     <li class="direct-message-list__0">
-                        <div class="profile">
-                            <span class="profile__img"></span>
+                        <div
+                            class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--middle">
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
                         </div>
-                        <label for="nickname1">닉네임</label>
+                        <label for="nickname1"
+                            >남도현
+                            <span class="sr-only">(다이렉트 메시지)</span>
+                        </label>
                         <input
+                            onclick="loadPage('./playerinfo/dohyeon_chat_panel.html', 0)"
                             class="sr-only"
                             name="nickname"
                             type="radio"
-                            id="nickname1"
-                        />
-                        <button type="button">
+                            id="nickname1" />
+                        <button aria-label="개인 메시지 닫기" type="button">
                             <img src="../assets/close.svg" alt="" />
                         </button>
                     </li>
                     <li class="direct-message-list__0">
-                        <div class="profile">
-                            <span class="profile__img"></span>
+                        <div
+                            class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--middle">
+                            <img
+                                src="../assets/jieun.png"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
                         </div>
-                        <label for="nickname2">닉네임</label>
+                        <label for="nickname2"
+                            >정지은
+                            <span class="sr-only">(다이렉트 메시지)</span>
+                        </label>
                         <input
+                            onclick="loadPage('./playerinfo/jieun-chat-pannel.html', 0)"
                             class="sr-only"
                             name="nickname"
                             type="radio"
-                            id="nickname2"
-                        />
-                        <button type="button">
+                            id="nickname2" />
+                        <button aria-label="개인 메시지 닫기" type="button">
                             <img src="../assets/close.svg" alt="" />
                         </button>
                     </li>
                     <li class="direct-message-list__0">
-                        <div class="profile">
-                            <span class="profile__img"></span>
+                        <div
+                            class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--middle">
+                            <img
+                                src="../assets/seokgeun.jpg"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status offline"></div>
                         </div>
-                        <label for="nickname3">닉네임</label>
+                        <label for="nickname3"
+                            >조석근
+                            <span class="sr-only">(다이렉트 메시지)</span>
+                        </label>
                         <input
+                            onclick="loadPage('./playerinfo/seokgeun.html', 0)"
                             class="sr-only"
                             name="nickname"
                             type="radio"
-                            id="nickname3"
-                        />
-                        <button type="button">
+                            id="nickname3" />
+                        <button aria-label="개인 메시지 닫기" type="button">
                             <img src="../assets/close.svg" alt="" />
                         </button>
                     </li>

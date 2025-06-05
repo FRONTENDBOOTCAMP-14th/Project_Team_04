@@ -1,5 +1,27 @@
 .chat-panel-container {
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    grid-template-rows: auto 1fr;
+}
+
+.chat-panel-container.chat-panel-server-panel {
+    grid-template-columns: 1fr;
+}
+
+.chat-panel-container__left-side {
+    flex: 1;
+    height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-panel-container__left-side.chat-panel-server-panel__left-size {
+    height: 100vh;
+}
+
+.side-profile-tab {
+    flex: 0 0 340px;
 }
 
 .chat-header {
@@ -9,6 +31,7 @@
     padding-left: 1.3125rem;
     border-bottom: 1px solid #2c2e32;
     justify-content: space-between;
+    grid-column: span 2;
 }
 
 .chat-header__user-profile-side {
@@ -73,6 +96,21 @@
         brightness(107%) contrast(97%);
 }
 
+/* 챗 박스 */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: var(--color-grey-300);
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
 /* 챗 박스 헤더 */
 .chat-box__topbox {
     margin: 1rem;
@@ -96,8 +134,44 @@
 }
 
 /* 챗 박스 메세지 부분 */
-
 .chat-box__message-list {
     margin: 1.0625rem 1.25rem 0 1rem;
     list-style: none;
+    color: var(--color-white);
+}
+
+.chat-box__one-message {
+    display: grid;
+    margin-bottom: 1rem;
+    grid-template-columns: max-content auto;
+    align-items: start;
+    margin-top: 1.0625rem;
+}
+
+.chat-box__one-message .avatar__wrapper {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    margin-right: 1rem;
+    margin-top: 5px;
+}
+
+.chat-box__info {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.chat-box__message {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.chat-box__info--name {
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.chat-box__info--time {
+    color: var(--color-grey-300);
+    font-size: 12px;
+    margin-left: 4px;
 }

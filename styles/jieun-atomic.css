@@ -1,0 +1,141 @@
+/* 채널 목록 호버 버튼 컴포넌트 스타일링 */
+.chat-box__message {
+    a {
+        text-decoration: none;
+        color: #4e91e4;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .server__radio {
+        margin-top: 0.5rem;
+    }
+
+    .channel__button {
+        display: flex;
+        width: 1rem;
+        height: 1rem;
+
+        .channel__chat {
+            width: 100%;
+        }
+
+        svg {
+            fill: var(--color-grey-200);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--color-white-100);
+            }
+        }
+    }
+}
+
+/* 툴팁 컴포넌트 스타일링 */
+.chat-box__message {
+    .tooltip {
+        margin-block: 0.5rem;
+        margin-inline: 0;
+        padding: 0.25rem;
+        width: 4rem;
+        height: 2rem;
+        text-align: center;
+    }
+
+    /* 오른쪽 툴팁 조정 */
+    p:nth-of-type(1):hover,
+    p:nth-of-type(1):focus-visible {
+        position: relative;
+
+        &::before {
+            left: 5rem;
+        }
+
+        &::after {
+            left: 5.125rem;
+        }
+    }
+
+    /* 왼쪽 툴팁 조정 */
+    p:nth-of-type(2):hover,
+    p:nth-of-type(2):focus-visible {
+        position: relative;
+
+        &::before {
+            right: 5rem;
+            left: auto;
+        }
+
+        &::after {
+            right: 5.125rem;
+            left: auto;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(50% - 0.125rem),
+                calc(100% - 0.125rem) calc(50% - 0.25rem),
+                calc(100% - 0.125rem) calc(50% + 0.25rem),
+                100% calc(50% + 0.125rem),
+                100% 100%,
+                0 100%
+            );
+        }
+    }
+
+    /* 위쪽 툴팁 조정 */
+    p:nth-of-type(3):hover,
+    p:nth-of-type(3):focus-visible {
+        &::before {
+            top: 2.375rem;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        &::after {
+            top: 2.5rem;
+            left: 50%;
+            clip-path: polygon(
+                0 0,
+                calc(50% - 0.125rem) 0,
+                calc(50% - 0.25rem) 0.125rem,
+                calc(50% + 0.25rem) 0.125rem,
+                calc(50% + 0.125rem) 0,
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+            transform: translateX(-50%);
+        }
+    }
+
+    /* 아래쪽 툴팁 조정 */
+    p:nth-of-type(4):hover,
+    p:nth-of-type(4):focus-visible {
+        &::before {
+            top: auto;
+            bottom: 2.375rem;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        &::after {
+            top: auto;
+            bottom: 2.5rem;
+            left: 50%;
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                calc(50% + 0.125rem) 100%,
+                calc(50% + 0.25rem) calc(100% - 0.125rem),
+                calc(50% - 0.25rem) calc(100% - 0.125rem),
+                calc(50% - 0.125rem) 100%,
+                0 100%
+            );
+            transform: translateX(-50%);
+        }
+    }
+}

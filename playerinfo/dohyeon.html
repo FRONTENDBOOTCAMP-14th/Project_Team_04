@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/chat.css" />
+        <link rel="stylesheet" href="../styles/friend-list.css" />
+        <link rel="stylesheet" href="../styles/profile.css" />
+        <link rel="stylesheet" href="../styles/chat-input-bar.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <section class="chat-panel-container">
+            <section class="chat-header">
+                <div class="chat-header__user-profile-side">
+                    <div
+                        class="avatar__wrapper avatar__wrapper--indicator avatar__wrapper--small">
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status online"></div>
+                    </div>
+                    <span class="chat-header__user-name">남도현</span>
+                    <svg
+                        class="chat-header__dot"
+                        aria-hidden="true"
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 4 4">
+                        <circle
+                            cx="2"
+                            cy="2"
+                            r="2"
+                            fill="currentColor"></circle>
+                    </svg>
+
+                    <span class="chat-header__sec-name-text">다른 별명</span>
+                    <span class="chat-header__sec-name">15. 남도현</span>
+                </div>
+                <div class="btn-side">
+                    <div class="btn-side__btn chat-header__call-btn">
+                        <img src="../assets/callimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__cam-btn">
+                        <img src="../assets/videochatimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__pin-btn">
+                        <img src="../assets/pinimg.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__add-friend">
+                        <img src="../assets/addfriend.svg" alt="" />
+                    </div>
+                    <div class="btn-side__btn chat-header__hide-profile">
+                        <img src="../assets/hideprofileimg.svg" alt="" />
+                    </div>
+                    <section class="friend-list-search small">
+                        <input
+                            class="friend-list-search__input"
+                            type="search"
+                            placeholder="검색하기"
+                            name=""
+                            id="" />
+                        <svg
+                            class="friend_list-icon"
+                            aria-label="지우기"
+                            aria-hidden="false"
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                fill="currentColor"
+                                d="M17.3 18.7a1 1 0 0 0 1.4-1.4L13.42 12l5.3-5.3a1 1 0 0 0-1.42-1.4L12 10.58l-5.3-5.3a1 1 0 0 0-1.4 1.42L10.58 12l-5.3 5.3a1 1 0 1 0 1.42 1.4L12 13.42l5.3 5.3Z"
+                                class=""></path>
+                        </svg>
+                    </section>
+                </div>
+            </section>
+            <!-- 채팅창 -->
+            <section class="chat-box">
+                <div class="chat-box__topbox">
+                    <div class="avatar__wrapper avatar__wrapper--extralarge">
+                        <!-- 큰 아바타 -->
+                        <img src="../assets/dohyeon.webp" class="avatar__img" />
+                        <div
+                            class="avatar__indicator avatar__indicator--status offline"></div>
+                    </div>
+                    <h1 class="chat-box__topbox--title">남도현</h1>
+                    <h2 class="chat-box__topbox--subtitle">d0_hyeon</h2>
+                    <p class="chat-box__topbox--title-description">
+                        <b>남도현</b> 님과 나눈 다이렉트 메시지의 첫 부분이에요.
+                    </p>
+                </div>
+
+                <!-- 실제 입력 창 -->
+                <ol class="chat-box__message-list">
+                    <!-- 메세지 하나 -->
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:30</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
+                            <p class="chat-box__one-line-text">안녕하세요!</p>
+                            <p class="chat-box__one-line-text">
+                                저는 UI 프로젝트 4이조아 팀의 남도현입니다.
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 메세지 하나 끝 -->
+                    <!-- li를 복사하면 메세지를 여러개 보낸것이 됨 -->
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:31</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <p class="chat-box__one-line-text">
+                                프로젝트 시작한 지 얼마나 지났다고 벌써 발표를
+                                하는 날이 왔네요...
+                            </p>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:34</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <p class="chat-box__one-line-text">
+                                저는 부트캠프롤 시작하기 전부터 팀 프로젝트를
+                                해보고 싶은 마음이 있었습니다.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                그것을 지금 제가 하고 있다는 사실이 너무 즐겁고
+                                계속할 수 있는 원동력이 되었습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:38</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <p class="chat-box__one-line-text">
+                                사실 이번에 UI 프로젝트를 하기 전에는 정말
+                                막막했습니다.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                어떻게 해야 하지? 무엇을 해야 하지?라는 고민이
+                                계속 들더라고요.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                하지만 막상 시작해 보니 멋있고 다정하신
+                                팀원분들과 함께라서 그런지 전에 했던 고민이 싹
+                                날아가고 자신감이 붙었습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:41</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <p class="chat-box__one-line-text">
+                                이번 프로젝트를 하면서 팀프로젝트를 하지
+                                않았다면 몰랐을 협업 방식에 대해서 배웠습니다.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                커뮤니케이션의 중요성과 다양한 아이디어 도출
+                                방법, 서로를 존중하는 방법
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                그리고 마크업을 할 때 접근성을 챙겨야 하고
+                                앞으로 구현할 것들을 미리 예측하여 코드를 짜는
+                                방법들을 익힐 수 있어서 좋았습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:43</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <p class="chat-box__one-line-text">
+                                앞으로 배울 내용들이 너무 기대됩니다.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                그리고 슬비쌤, 매니저님, 보조강사님도 너무
+                                감사합니다.
+                            </p>
+                            <p class="chat-box__one-line-text">
+                                같이 으쌰으쌰 해주시는 14기 수강생들도 모두
+                                화이팅입니다!!
+                            </p>
+                        </div>
+                    </li>
+                    <li class="chat-box__one-message">
+                        <div class="avatar__wrapper avatar__wrapper--large">
+                            <!-- 대화, 친구창 등 아바타 -->
+                            <img
+                                src="../assets/dohyeon.webp"
+                                class="avatar__img" />
+                            <div
+                                class="avatar__indicator avatar__indicator--status online"></div>
+                        </div>
+                        <div class="chat-box__info">
+                            <span class="chat-box__info--name">남도현</span>
+                            <span class="chat-box__info--time"
+                                >2025. 6. 5. 오전 9:46</span
+                            >
+                        </div>
+                        <div class="chat-box__message">
+                            <img src="../assets/cute.jpg" alt="" />
+                        </div>
+                    </li>
+                </ol>
+            </section>
+            <!-- 입력창 -->
+            <section class="chat-input-container">
+                <form action="" tabindex="0" tabindex="0">
+                    <button class="attach" type="button">
+                        <span class="sr-only">첨부파일 추가하기</span>
+                    </button>
+                    <div class="input__container">
+                        <label for="chat" class="sr-only">채팅입력</label
+                        ><textarea
+                            id="chat"
+                            placeholder="채팅을 입력해주세요."
+                            tabindex="0"></textarea>
+                    </div>
+                    <div class="button__container">
+                        <button type="button" class="gift" tabindex="0">
+                            <span class="sr-only">선물 보내기</span>
+                        </button>
+                        <button type="button" class="gif">
+                            <span class="sr-only">gif 사용하기</span>
+                        </button>
+                        <button type="button" class="sticker">
+                            <span class="sr-only">스티커 사용하기</span>
+                        </button>
+                        <button type="button" class="emoji">
+                            <span class="sr-only">이모지 사용하기</span>
+                        </button>
+                        <button type="button" class="game">
+                            <span class="sr-only">게임 추가하기</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section class="chat-right-side"></section>
+        </section>
+    </body>
+</html>
