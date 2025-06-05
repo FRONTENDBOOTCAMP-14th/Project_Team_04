@@ -142,12 +142,12 @@
                                         <input
                                             class="server__img profile__img"
                                             type="radio"
-                                            name="server"
-                                            id="server1"
+                                            name="component"
+                                            id="component1"
                                             data-tooltip="호버 메시지"
                                             checked /><label
                                             class="sr-only"
-                                            for="server1"
+                                            for="component1"
                                             >서버1</label
                                         ><span
                                             class="server__radio--hover"
@@ -157,12 +157,12 @@
                                         <input
                                             class="server__img profile__img"
                                             type="radio"
-                                            name="server"
-                                            id="server1"
+                                            name="component"
+                                            id="component2"
                                             data-tooltip="호버 메시지" /><label
                                             class="sr-only"
-                                            for="server1"
-                                            >서버1</label
+                                            for="component2"
+                                            >서버2</label
                                         ><span
                                             class="server__radio--hover"
                                             aria-hidden="true"></span>
@@ -210,30 +210,6 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="chat-box__one-message">
-                            <div class="avatar__wrapper avatar__wrapper--large">
-                                <!-- 대화, 친구창 등 아바타 -->
-                                <img
-                                    src="../assets/jieun.png"
-                                    class="avatar__img" />
-                                <div
-                                    class="avatar__indicator avatar__indicator--status offline"></div>
-                            </div>
-                            <div class="chat-box__info">
-                                <span class="chat-box__info--name">정지은</span>
-                                <span class="chat-box__info--time"
-                                    >오후 3:01</span
-                                >
-                            </div>
-                            <div class="chat-box__message">
-                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
-                                <a
-                                    class="chat-box__one-line-text"
-                                    href="../components/server-tab.html">
-                                    서버 탭 컴포넌트 보러 가기
-                                </a>
                             </div>
                         </li>
                         <li class="chat-box__one-message">
@@ -330,9 +306,10 @@
                                             <input
                                                 class="channel__radio sr-only"
                                                 type="radio"
-                                                name="channel"
-                                                id="channel1"
-                                                checked /><label for="channel1">
+                                                name="channelComponent"
+                                                id="component3"
+                                                checked /><label
+                                                for="component3">
                                                 <div
                                                     class="channel__voice"
                                                     data-tooltip="음성">
@@ -403,9 +380,9 @@
                                             <input
                                                 class="channel__radio sr-only"
                                                 type="radio"
-                                                name="channel"
-                                                id="channel2" /><label
-                                                for="channel2">
+                                                name="channelComponent"
+                                                id="component4" /><label
+                                                for="component4">
                                                 <div
                                                     class="channel__voice"
                                                     data-tooltip="텍스트">
@@ -474,30 +451,6 @@
                             <div class="chat-box__info">
                                 <span class="chat-box__info--name">정지은</span>
                                 <span class="chat-box__info--time"
-                                    >오후 3:01</span
-                                >
-                            </div>
-                            <div class="chat-box__message">
-                                <!-- p를 복사해서 늘리면 한 채팅에 여러번 대화 한게 됨 -->
-                                <a
-                                    class="chat-box__one-line-text"
-                                    href="../components/channel-list-button.html">
-                                    채널 목록 탭 컴포넌트 보러 가기
-                                </a>
-                            </div>
-                        </li>
-                        <li class="chat-box__one-message">
-                            <div class="avatar__wrapper avatar__wrapper--large">
-                                <!-- 대화, 친구창 등 아바타 -->
-                                <img
-                                    src="../assets/jieun.png"
-                                    class="avatar__img" />
-                                <div
-                                    class="avatar__indicator avatar__indicator--status offline"></div>
-                            </div>
-                            <div class="chat-box__info">
-                                <span class="chat-box__info--name">정지은</span>
-                                <span class="chat-box__info--time"
                                     >오후 3:27</span
                                 >
                             </div>
@@ -505,26 +458,25 @@
                                 <p class="chat-box__one-line-text">
                                     툴팁(호버 메시지) 컴포넌트
                                 </p>
-                                <p
-                                    class="chat-box__one-line-text tooltip"
-                                    data-tooltip="오른쪽 툴팁">
-                                    오른쪽
-                                </p>
-                                <p
-                                    class="chat-box__one-line-text tooltip"
-                                    data-tooltip="왼쪽 툴팁">
-                                    왼쪽
-                                </p>
-                                <p
-                                    class="chat-box__one-line-text tooltip"
-                                    data-tooltip="아래쪽 툴팁">
-                                    아래쪽
-                                </p>
-                                <p
-                                    class="chat-box__one-line-text tooltip"
-                                    data-tooltip="위쪽 툴팁">
-                                    위쪽
-                                </p>
+                                <div
+                                    class="chat-box__one-line-text tooltip__wrapper">
+                                    <p
+                                        class="tooltip"
+                                        data-tooltip="오른쪽 툴팁">
+                                        오른쪽
+                                    </p>
+                                    <p class="tooltip" data-tooltip="왼쪽 툴팁">
+                                        왼쪽
+                                    </p>
+                                    <p
+                                        class="tooltip"
+                                        data-tooltip="아래쪽 툴팁">
+                                        아래쪽
+                                    </p>
+                                    <p class="tooltip" data-tooltip="위쪽 툴팁">
+                                        위쪽
+                                    </p>
+                                </div>
                             </div>
                         </li>
                     </ol>

@@ -46,8 +46,8 @@
     }
 
     /* 오른쪽 툴팁 조정 */
-    p:nth-of-type(2):hover,
-    p:nth-of-type(2):focus-visible {
+    p:nth-of-type(1):hover,
+    p:nth-of-type(1):focus-visible {
         position: relative;
 
         &::before {
@@ -60,8 +60,8 @@
     }
 
     /* 왼쪽 툴팁 조정 */
-    p:nth-of-type(3):hover,
-    p:nth-of-type(3):focus-visible {
+    p:nth-of-type(2):hover,
+    p:nth-of-type(2):focus-visible {
         position: relative;
 
         &::before {
@@ -86,8 +86,8 @@
     }
 
     /* 위쪽 툴팁 조정 */
-    p:nth-of-type(4):hover,
-    p:nth-of-type(4):focus-visible {
+    p:nth-of-type(3):hover,
+    p:nth-of-type(3):focus-visible {
         &::before {
             top: 2.375rem;
             left: 50%;
@@ -112,8 +112,8 @@
     }
 
     /* 아래쪽 툴팁 조정 */
-    p:nth-of-type(5):hover,
-    p:nth-of-type(5):focus-visible {
+    p:nth-of-type(4):hover,
+    p:nth-of-type(4):focus-visible {
         &::before {
             top: auto;
             bottom: 2.375rem;
